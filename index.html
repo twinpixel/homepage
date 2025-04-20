@@ -263,6 +263,36 @@
             margin: 5px 0;
             font-size: 12px;
         }
+        
+        /* Stili per i frame retrò */
+        .retro-frame {
+            border: 8px ridge #c0c0c0;
+            background-color: #ffffff;
+            padding: 10px;
+            margin: 10px 0;
+            box-shadow: inset 2px 2px 5px rgba(0,0,0,0.3);
+        }
+        
+        .frame-title {
+            background: #000080;
+            color: #ffffff;
+            padding: 5px 10px;
+            font-weight: bold;
+            text-align: center;
+            border: 2px outset #c0c0c0;
+            margin: -10px -10px 10px -10px;
+            font-family: 'MS Sans Serif', 'Arial', sans-serif;
+        }
+
+        /* Aggiustiamo gli stili esistenti per integrarsi meglio con i frame */
+        .vibecoding, .github-box, .ebay-treasure {
+            margin: 0;
+            border: none;
+        }
+
+        .social-icons {
+            margin: 0;
+        }
     </style>
     <script>
         // Animate the title
@@ -333,110 +363,135 @@
         </tr>
         <tr>
             <td width="70%">
-                <h2>About Me</h2>
-                <p>Hi there! I'm Andrea Poltronieri, and here's what the voices in my head tell me I am:</p>
-                <ul>
-                    <li>🤖 <b>Code Wizard</b> (Software architect by day)</li>
-                    <li>💡 <b>Idea Generator</b> (with more ideas than time to implement them)</li>
-                    <li>🕰️ <b>Digital Archaeologist</b> (passionate about computing history)</li>
-                    <li>🔄 <b>Professional Problem Creator/Solver</b> (it's a fine balance)</li>
-                 </ul>
-                
-                <p><small><i>Disclaimer: No pixels were harmed in the making of this website.</i></small></p>
-                
-                <div class="photo-space">
-                   <img height="200" src="profile.jpg" border="3">
-                </div>
-                
-                <div class="vibecoding">
-                    <h2>Vibecoding Projects <span class="new-banner">HOT</span></h2>
-                    <p>Where my coding meets creativity and questionable life choices:</p>
+                <div class="retro-frame">
+                    <div class="frame-title">About Me</div>
+                    <h2>About Me</h2>
+                    <p>Hi there! I'm Andrea Poltronieri, and here's what the voices in my head tell me I am:</p>
                     <ul>
-                        <li><a href="https://github.com/twinpixel/cinematch" target="_blank">CineMatch</a> - AI that picks movies better than your indecisive friends</li>
-                        <li><a href="https://github.com/twinpixel/ScentMate" target="_blank">ScentMate</a> - Because choosing perfume shouldn't require a chemistry degree</li>
-                        <li>More half-baked ideas in development (patience recommended)</li>
+                        <li>�� <b>Code Wizard</b> (Software architect by day)</li>
+                        <li>💡 <b>Idea Generator</b> (with more ideas than time to implement them)</li>
+                        <li>🕰️ <b>Digital Archaeologist</b> (passionate about computing history)</li>
+                        <li>🔄 <b>Professional Problem Creator/Solver</b> (it's a fine balance)</li>
                     </ul>
+                    
+                    <p><small><i>Disclaimer: No pixels were harmed in the making of this website.</i></small></p>
+                    
+                    <div class="photo-space">
+                        <img height="200" src="profile.jpg" border="3">
+                    </div>
                 </div>
-                
-                <div class="github-box">
-                    <h2>My GitHub Universe</h2>
-                    <p>Where code goes to either thrive or die quietly:</p>
-                    <ul>
-                        <li><a href="https://github.com/twinpixel" target="_blank">twinpixel GitHub Profile</a></li>
-                        <li>Various experiments in Java, Python, and "what was I thinking?"</li>
-                        <li>Cloud architecture samples and mobile apps in varying states of decay</li>
-                    </ul>
+
+                <div class="retro-frame">
+                    <div class="frame-title">Vibecoding Projects</div>
+                    <div class="vibecoding">
+                        <h2>Vibecoding Projects <span class="new-banner">HOT</span></h2>
+                        <p>Where my coding meets creativity and questionable life choices:</p>
+                        <ul>
+                            <li><a href="https://github.com/twinpixel/cinematch" target="_blank">CineMatch</a> - AI that picks movies better than your indecisive friends</li>
+                            <li><a href="https://github.com/twinpixel/ScentMate" target="_blank">ScentMate</a> - Because choosing perfume shouldn't require a chemistry degree</li>
+                            <li>More half-baked ideas in development (patience recommended)</li>
+                        </ul>
+                    </div>
                 </div>
-                
-                <div class="retro-computer">
-                    <h2>Retrocomputing Passion</h2>
-                    <pre>
+
+                <div class="retro-frame">
+                    <div class="frame-title">GitHub Universe</div>
+                    <div class="github-box">
+                        <h2>My GitHub Universe</h2>
+                        <p>Where code goes to either thrive or die quietly:</p>
+                        <ul>
+                            <li><a href="https://github.com/twinpixel" target="_blank">twinpixel GitHub Profile</a></li>
+                            <li>Various experiments in Java, Python, and "what was I thinking?"</li>
+                            <li>Cloud architecture samples and mobile apps in varying states of decay</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="retro-frame">
+                    <div class="frame-title">Retrocomputing Zone</div>
+                    <div class="retro-computer">
+                        <h2>Retrocomputing Passion</h2>
+                        <pre>
   _____     ______
  /      \  |____  \
 |  ▒▒▒▒▒▒ | ▒▒▒▒  |
 | ▒▒_____ | ▒▒____/
  \▒▒     \ \▒▒
   \▒▒▒▒▒▒  \▒▒▒▒▒▒
-                    </pre>
-                    <p>Because modern computers are too reliable and user-friendly:</p>
-                    <ul>
-                        <li>Vintage computer collector</li>
-                        <li>Old-school programming enthusiast</li>
-                        <li>Believer that 8-bit graphics had more soul</li>
-                        <li>Proud owner of several heavy CRT monitors</li>
-                    </ul>
+                        </pre>
+                        <p>Because modern computers are too reliable and user-friendly:</p>
+                        <ul>
+                            <li>Vintage computer collector</li>
+                            <li>Old-school programming enthusiast</li>
+                            <li>Believer that 8-bit graphics had more soul</li>
+                            <li>Proud owner of several heavy CRT monitors</li>
+                        </ul>
+                    </div>
                 </div>
-                
-               
             </td>
             <td width="30%" valign="top">
-                <h2>Social Connections</h2>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/apoltronieri" target="_blank"><img src="https://simpleicons.org/icons/facebook.svg" alt="Facebook"></a>
-                    <a href="https://www.instagram.com/andreapoltronieri/" target="_blank"><img src="https://simpleicons.org/icons/instagram.svg" alt="Instagram"></a>
-                    <a href="https://www.linkedin.com/in/andrea-poltronieri-02b788/" target="_blank"><img src="https://static-00.iconduck.com/assets.00/linkedin-with-circle-icon-2048x2048-np6yltn1.png" alt="Linkedin"></a>
-                  </div>
-                
-                <div class="ebay-treasure">
-                    <h2>eBay Treasure Trove <span class="new-banner">SALE</span></h2>
-                    <p>My periodic attempts to declutter (with questionable success):</p>
-                    <p><a href="https://www.ebay.it/sch/i.html?_ssn=twinpixel" target="_blank">Browse my eBay store</a></p>
-                    <p>You might find:</p>
+                <div class="retro-frame">
+                    <div class="frame-title">Social Hub</div>
+                    <h2>Social Connections</h2>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/apoltronieri" target="_blank"><img src="https://simpleicons.org/icons/facebook.svg" alt="Facebook"></a>
+                        <a href="https://www.instagram.com/andreapoltronieri/" target="_blank"><img src="https://simpleicons.org/icons/instagram.svg" alt="Instagram"></a>
+                        <a href="https://www.linkedin.com/in/andrea-poltronieri-02b788/" target="_blank"><img src="https://static-00.iconduck.com/assets.00/linkedin-with-circle-icon-2048x2048-np6yltn1.png" alt="Linkedin"></a>
+                    </div>
+                </div>
+
+                <div class="retro-frame">
+                    <div class="frame-title">eBay Store</div>
+                    <div class="ebay-treasure">
+                        <h2>eBay Treasure Trove <span class="new-banner">SALE</span></h2>
+                        <p>My periodic attempts to declutter (with questionable success):</p>
+                        <p><a href="https://www.ebay.it/sch/i.html?_ssn=twinpixel" target="_blank">Browse my eBay store</a></p>
+                        <p>You might find:</p>
+                        <ul>
+                            <li>Tech gadgets (some even work!)</li>
+                            <li>Vintage computing relics</li>
+                            <li>Things I swore I'd use but never did</li>
+                            <li>Mystery items even I don't remember acquiring</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="retro-frame">
+                    <div class="frame-title">Site Stats</div>
+                    <h2>Visitor Counter</h2>
+                    <div class="counter">
+                        <img src="https://www.cutercounter.com/hits.php?id=hmxndkf&nd=6&style=1" border="0" alt="visitor counter">
+                        <br>
+                        You are visitor number: <b><script>document.write(Math.floor(Math.random() * 100000).toString().padStart(5, '0'));</script></b>
+                        <br>
+                        <small>(Counter may or may not be accurate - it's retro!)</small>
+                    </div>
+                </div>
+
+                <div class="retro-frame">
+                    <div class="frame-title">Cool Links</div>
+                    <h2>Cool Links</h2>
                     <ul>
-                        <li>Tech gadgets (some even work!)</li>
-                        <li>Vintage computing relics</li>
-                        <li>Things I swore I'd use but never did</li>
-                        <li>Mystery items even I don't remember acquiring</li>
+                        <li><a href="https://web.archive.org/web/19981202230410/http://www.hotbot.com/" target="_blank">HotBot</a> - The search engine of champions</li>
+                        <li><a href="https://web.archive.org/web/19990208051909/http://www.altavista.com/" target="_blank">AltaVista</a> - Because Google wasn't cool yet</li>
+                        <li><a href="https://web.archive.org/web/19990209022512/http://www.geocities.com/" target="_blank">GeoCities</a> - Where websites went to be fabulous</li>
+                        <li><a href="https://web.archive.org/web/19990209022512/http://www.angelfire.com/" target="_blank">Angelfire</a> - For when GeoCities was too mainstream</li>
+                        <li><a href="https://web.archive.org/web/19990209022512/http://www.hampsterdance.com/" target="_blank">Hampster Dance</a> - Peak internet culture</li>
+                        <li><a href="https://web.archive.org/web/19990209022512/http://www.spacejam.com/" target="_blank">Space Jam</a> - The official 1996 movie site (still up!)</li>
                     </ul>
                 </div>
-                
-                <h2>Visitor Counter</h2>
-                <div class="counter">
-                    <img src="https://www.cutercounter.com/hits.php?id=hmxndkf&nd=6&style=1" border="0" alt="visitor counter">
-                    <br>
-                    You are visitor number: <b><script>document.write(Math.floor(Math.random() * 100000).toString().padStart(5, '0'));</script></b>
-                    <br>
-                    <small>(Counter may or may not be accurate - it's retro!)</small>
+
+                <div class="retro-frame">
+                    <div class="frame-title">Web Rings</div>
+                    <h2>My Web Rings</h2>
+                    <p align="center">
+                        <img src="https://web.archive.org/web/19990209022512im_/http://www.webring.org/cgi-bin/webring?ring=retrocomputing;id=1;prev" alt="Previous">
+                        <a href="https://web.archive.org/web/19990209022512/http://www.webring.org/cgi-bin/webring?ring=retrocomputing;id=1;prev5" target="_blank">
+                            <img src="https://web.archive.org/web/19990209022512im_/http://www.webring.org/cgi-bin/webring?ring=retrocomputing;id=1;img" alt="Retrocomputing Web Ring" border="0">
+                        </a>
+                        <img src="https://web.archive.org/web/19990209022512im_/http://www.webring.org/cgi-bin/webring?ring=retrocomputing;id=1;next" alt="Next">
+                    </p>
                 </div>
-                
-                <h2>Cool Links</h2>
-                <ul>
-                    <li><a href="https://web.archive.org/web/19981202230410/http://www.hotbot.com/" target="_blank">HotBot</a> - The search engine of champions</li>
-                    <li><a href="https://web.archive.org/web/19990208051909/http://www.altavista.com/" target="_blank">AltaVista</a> - Because Google wasn't cool yet</li>
-                    <li><a href="https://web.archive.org/web/19990209022512/http://www.geocities.com/" target="_blank">GeoCities</a> - Where websites went to be fabulous</li>
-                    <li><a href="https://web.archive.org/web/19990209022512/http://www.angelfire.com/" target="_blank">Angelfire</a> - For when GeoCities was too mainstream</li>
-                    <li><a href="https://web.archive.org/web/19990209022512/http://www.hampsterdance.com/" target="_blank">Hampster Dance</a> - Peak internet culture</li>
-                    <li><a href="https://web.archive.org/web/19990209022512/http://www.spacejam.com/" target="_blank">Space Jam</a> - The official 1996 movie site (still up!)</li>
-                </ul>
-                
-                <h2>My Web Rings</h2>
-                <p align="center">
-                    <img src="https://web.archive.org/web/19990209022512im_/http://www.webring.org/cgi-bin/webring?ring=retrocomputing;id=1;prev" alt="Previous">
-                    <a href="https://web.archive.org/web/19990209022512/http://www.webring.org/cgi-bin/webring?ring=retrocomputing;id=1;prev5" target="_blank">
-                        <img src="https://web.archive.org/web/19990209022512im_/http://www.webring.org/cgi-bin/webring?ring=retrocomputing;id=1;img" alt="Retrocomputing Web Ring" border="0">
-                    </a>
-                    <img src="https://web.archive.org/web/19990209022512im_/http://www.webring.org/cgi-bin/webring?ring=retrocomputing;id=1;next" alt="Next">
-                </p>
             </td>
         </tr>
         <tr>
