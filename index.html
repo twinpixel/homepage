@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Andrea's Retro Homepage</title>
+    <title>Poltro's Homepage</title>
     <style>
         body {
-            background-color: #f0f0f0;
+            background-color: #000066;
             font-family: 'Comic Sans MS', 'Arial', sans-serif;
             color: #000;
             margin: 0;
@@ -14,6 +14,7 @@
         
         .blink {
             animation: blink 1s step-end infinite;
+            color: #ffff00;
         }
         
         @keyframes blink {
@@ -23,48 +24,64 @@
         .marquee {
             color: #ff0000;
             font-weight: bold;
+            background-color: #000;
+            padding: 5px;
         }
         
         table {
-            border: 3px solid #0000ff;
+            border: 5px ridge #ff0000;
             background-color: #ffffff;
-            width: 80%;
-            margin: 20px auto;
-            padding: 10px;
+            width: 90%;
+            margin: 10px auto;
+            padding: 0;
+            background-image: url('https://www.transparenttextures.com/patterns/diagmonds-light.png');
         }
         
         td {
             vertical-align: top;
             padding: 10px;
+            border: 1px dotted #0000ff;
         }
         
         h1 {
-            color: #0000ff;
+            color: #ff00ff;
             text-align: center;
-            font-size: 28px;
-            text-shadow: 2px 2px 4px #cccccc;
+            font-size: 32px;
+            text-shadow: 3px 3px 0px #00ffff;
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            background-color: #000;
+            padding: 10px;
+            margin: 0;
+            letter-spacing: 2px;
         }
         
         h2 {
-            color: #ff00ff;
-            border-bottom: 2px dotted #000;
+            color: #0000ff;
+            border-bottom: 3px groove #ff00ff;
             padding-bottom: 5px;
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            background-color: #ccccff;
+            padding: 5px;
         }
         
         a {
             color: #0000ff;
-            text-decoration: none;
+            text-decoration: underline;
         }
         
         a:hover {
             color: #ff0000;
-            text-decoration: underline;
+            text-decoration: none;
+            background-color: #ffff00;
         }
         
         .counter {
             text-align: center;
             font-size: 12px;
-            color: #666;
+            color: #ff0000;
+            background-color: #000;
+            padding: 5px;
+            border: 2px solid #00ff00;
         }
         
         .photo-space {
@@ -74,56 +91,81 @@
             text-align: center;
             line-height: 200px;
             margin: 10px 0;
+            background-image: url('https://www.transparenttextures.com/patterns/light-honeycomb.png');
         }
         
         .social-icons {
             text-align: center;
             margin: 20px 0;
+            background-color: #f4f3f3;
+            padding: 10px;
         }
         
         .social-icons img {
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             margin: 0 5px;
+            border: 2px solid #ffff00;
         }
         
         .vibecoding {
-            background-color: #ffffcc;
-            border: 2px solid #ffcc00;
+            background-color: #ccffcc;
+            border: 3px outset #00ff00;
             padding: 10px;
             margin: 10px 0;
+            background-image: url('https://www.transparenttextures.com/patterns/light-toast.png');
         }
         
         .github-box {
-            background-color: #f5f5f5;
-            border: 2px solid #24292e;
+            background-color: #ccccff;
+            border: 3px outset #0000ff;
             padding: 10px;
             margin: 10px 0;
+            background-image: url('https://www.transparenttextures.com/patterns/light-sketch.png');
         }
         
         .ebay-treasure {
-            background-color: #fff4f4;
-            border: 2px solid #e53238;
+            background-color: #ffcccc;
+            border: 3px outset #ff0000;
             padding: 10px;
             margin: 10px 0;
+            background-image: url('https://www.transparenttextures.com/patterns/light-paper-fibers.png');
         }
         
         .new-banner {
             background-color: #ff0000;
-            color: #ffffff;
+            color: #ffff00;
             font-weight: bold;
             padding: 2px 5px;
             font-size: 12px;
-            border-radius: 3px;
+            border-radius: 0;
             margin-left: 5px;
+            text-transform: uppercase;
         }
         
         .retro-computer {
             font-family: 'Courier New', monospace;
             background-color: #000;
-            color: #0f0;
+            color: #00ff00;
             padding: 10px;
             margin: 10px 0;
+            border: 3px solid #00ff00;
+        }
+        
+        ul {
+            list-style-type: square;
+        }
+        
+        hr {
+            height: 5px;
+            background-color: #ff00ff;
+            border: none;
+        }
+        
+        /* Aggiunta di stili per il marquee */
+        marquee {
+            font-size: 14px;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -131,13 +173,15 @@
     <table cellspacing="0" cellpadding="0">
         <tr>
             <td colspan="2">
-                <h1>Welcome to Andrea's Retro Homepage!</h1>
+                <h1>Welcome to Poltroweb!</h1>
                 <div class="marquee">
-                    <marquee behavior="scroll" direction="left">
-                        *** UNDER CONSTRUCTION *** 
+                    <marquee behavior="scroll" direction="left" scrollamount="8">
+                        <blink>*** UNDER CONSTRUCTION ***</blink> 
                         <span class="blink">NEW!</span> 
                         Now with 100% more retrocomputing! 
                         Last updated: <script>document.write(new Date().toLocaleDateString());</script>
+                        &nbsp;&nbsp;&nbsp; 
+                        <img src="https://www.cutercounter.com/hits.php?id=hmxndkf&nd=6&style=1" border="0" alt="visitor counter">
                     </marquee>
                 </div>
             </td>
@@ -154,7 +198,7 @@
                 </ul>
                 
                 <div class="photo-space">
-                   <img height="200" src="profile.jpg">
+                   <img height="200" src="profile.jpg" border="3">
                 </div>
                 
                 <div class="vibecoding">
@@ -204,7 +248,7 @@
                     <a href="https://www.facebook.com/apoltronieri" target="_blank"><img src="https://simpleicons.org/icons/facebook.svg" alt="Facebook"></a>
                     <a href="https://www.instagram.com/andreapoltronieri/" target="_blank"><img src="https://simpleicons.org/icons/instagram.svg" alt="Instagram"></a>
                     <a href="https://www.linkedin.com/in/andrea-poltronieri-02b788/" target="_blank"><img src="https://static-00.iconduck.com/assets.00/linkedin-with-circle-icon-2048x2048-np6yltn1.png" alt="Linkedin"></a>
-                </div>
+                  </div>
                 
                 <div class="ebay-treasure">
                     <h2>eBay Treasure Trove <span class="new-banner">SALE</span></h2>
@@ -237,6 +281,15 @@
                     <li><a href="https://web.archive.org/web/19990209022512/http://www.hampsterdance.com/" target="_blank">Hampster Dance</a> - Peak internet culture</li>
                     <li><a href="https://web.archive.org/web/19990209022512/http://www.spacejam.com/" target="_blank">Space Jam</a> - The official 1996 movie site (still up!)</li>
                 </ul>
+                
+                <h2>My Web Rings</h2>
+                <p align="center">
+                    <img src="https://web.archive.org/web/19990209022512im_/http://www.webring.org/cgi-bin/webring?ring=retrocomputing;id=1;prev" alt="Previous">
+                    <a href="https://web.archive.org/web/19990209022512/http://www.webring.org/cgi-bin/webring?ring=retrocomputing;id=1;prev5" target="_blank">
+                        <img src="https://web.archive.org/web/19990209022512im_/http://www.webring.org/cgi-bin/webring?ring=retrocomputing;id=1;img" alt="Retrocomputing Web Ring" border="0">
+                    </a>
+                    <img src="https://web.archive.org/web/19990209022512im_/http://www.webring.org/cgi-bin/webring?ring=retrocomputing;id=1;next" alt="Next">
+                </p>
             </td>
         </tr>
         <tr>
@@ -245,11 +298,26 @@
                 <p>© <script>document.write(new Date().getFullYear());</script> Andrea Poltronieri - All Rights Reserved (maybe)</p>
                 <p>
                     <a href="javascript:alert('Best viewed with Netscape Navigator 4.0 or Internet Explorer 5.0 at 800x600 resolution!\n\nSet your monitor to 256 colors for optimal experience!')">
-                        <img  width="50" src="browsers.gif" border="0">
+                        <img width="88" height="31" src="https://web.archive.org/web/19981212041316im_/http://www.microsoft.com/library/toolbar/3.0/images/banners/ie_logo.gif" border="0" alt="Microsoft Internet Explorer">
                     </a>
+                    <a href="javascript:alert('This site looks best with Netscape Navigator!')">
+                        <img width="88" height="31" src="https://web.archive.org/web/19990209022512im_/http://home.netscape.com/eng/communicator4/communicator_download_now.gif" border="0" alt="Netscape Now!">
+                    </a>
+                    <br>
+                    <img src="https://web.archive.org/web/19990209022512im_/http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01!" border="0">
                 </p>
             </td>
         </tr>
     </table>
+    
+    <!-- Blink tag per browser che non supportano CSS animation -->
+    <script>
+        if (!('animate' in document.createElement('div'))) {
+            document.write('<style>.blink { text-decoration: blink; }</style>');
+        }
+    </script>
+    
+    <!-- Musica MIDI di sottofondo -->
+    <embed src="https://www.midiworld.com/midi/90s/techno.mid" autostart="true" loop="true" hidden="true">
 </body>
 </html>
