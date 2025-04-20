@@ -218,6 +218,51 @@
             max-width: 88px;
             height: auto;
         }
+        
+        /* Add banner styles */
+        .banner-container {
+            text-align: center;
+            margin: 20px 0;
+            padding: 10px;
+            background: #000;
+            border: 3px ridge #ff00ff;
+        }
+        
+        .banner {
+            display: none;
+            margin: 0 auto;
+        }
+        
+        .banner.active {
+            display: block;
+        }
+        
+        .banner img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Add audio player styles */
+        .audio-player {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #000;
+            padding: 10px;
+            border: 3px ridge #ff00ff;
+            z-index: 1000;
+            text-align: center;
+        }
+        
+        .audio-player audio {
+            margin: 5px 0;
+        }
+        
+        .audio-player p {
+            color: #ffff00;
+            margin: 5px 0;
+            font-size: 12px;
+        }
     </style>
     <script>
         // Animate the title
@@ -231,15 +276,44 @@
         
         // Start the title animation
         setInterval(animateTitle, 200);
+        
+        // Banner rotation
+        const banners = [
+            { text: "🌟 UNDER CONSTRUCTION 🌟", color: "#ffff00" },
+            { text: "🔥 NEW! 🔥", color: "#ff0000" },
+            { text: "💫 BEST VIEWED WITH NETSCAPE 💫", color: "#00ff00" },
+            { text: "🎮 RETRO COMPUTING ZONE 🎮", color: "#00ffff" },
+            { text: "📀 CD-ROM READY 📀", color: "#ff00ff" },
+            { text: "⚡ HIGH SPEED INTERNET REQUIRED ⚡", color: "#ffff00" },
+            { text: "🎵 MIDI MUSIC ENABLED 🎵", color: "#00ff00" },
+            { text: "🖥️ 800x600 RESOLUTION RECOMMENDED 🖥️", color: "#ff0000" }
+        ];
+        
+        function rotateBanners() {
+            const bannerContainer = document.getElementById('banner-container');
+            const randomBanner = banners[Math.floor(Math.random() * banners.length)];
+            
+            bannerContainer.innerHTML = `
+                <div class="banner active" style="color: ${randomBanner.color}; font-size: 24px; font-weight: bold; text-shadow: 2px 2px #000;">
+                    ${randomBanner.text}
+                </div>
+            `;
+        }
+        
+        // Rotate banners every 3 seconds
+        setInterval(rotateBanners, 3000);
     </script>
 </head>
 <body>
-    <!-- Background music -->
-    <audio autoplay loop>
-        <source src="background.mp3" type="audio/mpeg">
-        <source src="background.ogg" type="audio/ogg">
-        <p>Your browser doesn't support HTML5 audio. Time to upgrade that browser! 🌐</p>
-    </audio>
+    <!-- Background music with controls -->
+    <div class="audio-player">
+        <p>🎵 Retro Background Music 🎵</p>
+        <audio controls loop>
+            <source src="background.mp3" type="audio/mpeg">
+            <source src="background.ogg" type="audio/ogg">
+            <p>Your browser doesn't support HTML5 audio. Time to upgrade that browser! 🌐</p>
+        </audio>
+    </div>
     
     <table cellspacing="0" cellpadding="0">
         <tr>
@@ -367,6 +441,7 @@
         </tr>
         <tr>
             <td colspan="2" align="center">
+                <div id="banner-container" class="banner-container"></div>
                 <hr>
                 <p>© <script>document.write(new Date().getFullYear());</script> Andrea Poltronieri - All Rights Reserved (maybe)</p>
                 <p>
