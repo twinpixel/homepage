@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Poltro's Homepage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             background-color: #000066;
@@ -26,12 +27,15 @@
             font-weight: bold;
             background-color: #000;
             padding: 5px;
+            overflow-x: auto;
+            white-space: nowrap;
         }
         
         table {
             border: 5px ridge #ff0000;
             background-color: #ffffff;
-            width: 90%;
+            width: 100%;
+            max-width: 1200px;
             margin: 10px auto;
             padding: 0;
             background-image: url('https://www.transparenttextures.com/patterns/diagmonds-light.png');
@@ -41,12 +45,28 @@
             vertical-align: top;
             padding: 10px;
             border: 1px dotted #0000ff;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        @media (min-width: 768px) {
+            td {
+                display: table-cell;
+                width: auto;
+            }
+            td[width="70%"] {
+                width: 70%;
+            }
+            td[width="30%"] {
+                width: 30%;
+            }
         }
         
         h1 {
             color: #ff00ff;
             text-align: center;
-            font-size: 32px;
+            font-size: clamp(24px, 5vw, 32px);
             text-shadow: 3px 3px 0px #00ffff;
             font-family: 'Impact', 'Arial Black', sans-serif;
             background-color: #000;
@@ -62,6 +82,7 @@
             font-family: 'Impact', 'Arial Black', sans-serif;
             background-color: #ccccff;
             padding: 5px;
+            font-size: clamp(18px, 4vw, 24px);
         }
         
         a {
@@ -87,11 +108,23 @@
         .photo-space {
             background-color: #ddd;
             border: 2px dashed #999;
-            height: 200px;
+            height: auto;
+            min-height: 200px;
             text-align: center;
-            line-height: 200px;
             margin: 10px 0;
             background-image: url('https://www.transparenttextures.com/patterns/light-honeycomb.png');
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .photo-space img {
+            max-width: 100%;
+            height: auto;
+            max-height: 200px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
         }
         
         .social-icons {
@@ -102,33 +135,33 @@
         }
         
         .social-icons img {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             margin: 0 5px;
             border: 2px solid #ffff00;
+        }
+        
+        .vibecoding, .github-box, .ebay-treasure, .retro-computer {
+            padding: 10px;
+            margin: 10px 0;
+            word-wrap: break-word;
         }
         
         .vibecoding {
             background-color: #ccffcc;
             border: 3px outset #00ff00;
-            padding: 10px;
-            margin: 10px 0;
             background-image: url('https://www.transparenttextures.com/patterns/light-toast.png');
         }
         
         .github-box {
             background-color: #ccccff;
             border: 3px outset #0000ff;
-            padding: 10px;
-            margin: 10px 0;
             background-image: url('https://www.transparenttextures.com/patterns/light-sketch.png');
         }
         
         .ebay-treasure {
             background-color: #ffcccc;
             border: 3px outset #ff0000;
-            padding: 10px;
-            margin: 10px 0;
             background-image: url('https://www.transparenttextures.com/patterns/light-paper-fibers.png');
         }
         
@@ -150,10 +183,12 @@
             padding: 10px;
             margin: 10px 0;
             border: 3px solid #00ff00;
+            overflow-x: auto;
         }
         
         ul {
             list-style-type: square;
+            padding-left: 20px;
         }
         
         hr {
@@ -162,10 +197,26 @@
             border: none;
         }
         
-        /* Aggiunta di stili per il marquee */
-        marquee {
-            font-size: 14px;
-            font-weight: bold;
+        /* Mobile-friendly marquee replacement */
+        @media (max-width: 767px) {
+            .marquee {
+                animation: scroll-left 20s linear infinite;
+            }
+            
+            @keyframes scroll-left {
+                0% { transform: translateX(100%); }
+                100% { transform: translateX(-100%); }
+            }
+            
+            .marquee marquee {
+                display: none;
+            }
+        }
+        
+        /* Footer images responsive */
+        footer img {
+            max-width: 88px;
+            height: auto;
         }
     </style>
 </head>
@@ -189,13 +240,18 @@
         <tr>
             <td width="70%">
                 <h2>About Me</h2>
-                <p>Hi there! I'm Andrea Poltronieri, a self-described:</p>
+                <p>Hi there! I'm Andrea Poltronieri, and here's what the voices in my head tell me I am:</p>
                 <ul>
-                    <li>🤖 <b>Code Wizard</b> (Software architect by day)</li>
-                    <li>💡 <b>Idea Generator</b> (with more ideas than time to implement them)</li>
-                    <li>🕰️ <b>Digital Archaeologist</b> (passionate about computing history)</li>
-                    <li>🔄 <b>Professional Problem Creator/Solver</b> (it's a fine balance)</li>
+                    <li>🤖 <b>Digital Wizard</b> (I turn coffee into code, and bugs into features)</li>
+                    <li>💡 <b>Idea Hoarder</b> (My GitHub is like a digital graveyard of "I'll finish this someday" projects)</li>
+                    <li>🕰️ <b>Time Traveler</b> (I collect vintage computers because modern ones are too reliable and user-friendly)</li>
+                    <li>🔄 <b>Professional Bug Creator</b> (I don't write bugs, I write undocumented features)</li>
+                    <li>🎮 <b>Retro Gaming Archaeologist</b> (I dig through old code like Indiana Jones, but with more compiler errors)</li>
+                    <li>🌐 <b>Web Time Capsule</b> (I keep the 90s web alive, one Comic Sans at a time)</li>
+                  <li>📝 <b>Documentation Artist</b> (I write comments in my code that only future me can understand)</li>
                 </ul>
+                
+                <p><small><i>Disclaimer: Any resemblance to a competent developer is purely coincidental. No pixels were harmed in the making of this website.</i></small></p>
                 
                 <div class="photo-space">
                    <img height="200" src="profile.jpg" border="3">
@@ -267,7 +323,7 @@
                 <div class="counter">
                     <img src="https://www.cutercounter.com/hits.php?id=hmxndkf&nd=6&style=1" border="0" alt="visitor counter">
                     <br>
-                    You are visitor number: <b>00001</b>
+                    You are visitor number: <b><script>document.write(Math.floor(Math.random() * 100000).toString().padStart(5, '0'));</script></b>
                     <br>
                     <small>(Counter may or may not be accurate - it's retro!)</small>
                 </div>
