@@ -219,8 +219,28 @@
             height: auto;
         }
     </style>
+    <script>
+        // Animate the title
+        let titleText = "Welcome to Poltroweb!";
+        let titlePosition = 0;
+        
+        function animateTitle() {
+            document.title = " ".repeat(titlePosition) + titleText;
+            titlePosition = (titlePosition + 1) % 20;
+        }
+        
+        // Start the title animation
+        setInterval(animateTitle, 200);
+    </script>
 </head>
 <body>
+    <!-- Background music -->
+    <audio autoplay loop>
+        <source src="background.mp3" type="audio/mpeg">
+        <source src="background.ogg" type="audio/ogg">
+        <p>Your browser doesn't support HTML5 audio. Time to upgrade that browser! 🌐</p>
+    </audio>
+    
     <table cellspacing="0" cellpadding="0">
         <tr>
             <td colspan="2">
@@ -369,8 +389,5 @@
             document.write('<style>.blink { text-decoration: blink; }</style>');
         }
     </script>
-    
-    <!-- Musica MIDI di sottofondo -->
-    <embed src="https://www.midiworld.com/midi/90s/techno.mid" autostart="true" loop="true" hidden="true">
 </body>
 </html>
