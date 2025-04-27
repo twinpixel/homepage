@@ -12,16 +12,16 @@
             padding: 0;
             background-image: url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png');
         }
-        
+
         .blink {
             animation: blink 1s step-end infinite;
             color: #ffff00;
         }
-        
+
         @keyframes blink {
             50% { opacity: 0; }
         }
-        
+
         .marquee {
             color: #ff0000;
             font-weight: bold;
@@ -30,7 +30,7 @@
             overflow-x: auto;
             white-space: nowrap;
         }
-        
+
         table {
             border: 5px ridge #ff0000;
             background-color: #ffffff;
@@ -40,7 +40,7 @@
             padding: 0;
             background-image: url('https://www.transparenttextures.com/patterns/diagmonds-light.png');
         }
-        
+
         td {
             vertical-align: top;
             padding: 10px;
@@ -49,7 +49,7 @@
             width: 100%;
             box-sizing: border-box;
         }
-        
+
         @media (min-width: 768px) {
             td {
                 display: table-cell;
@@ -62,7 +62,7 @@
                 width: 30%;
             }
         }
-        
+
         h1 {
             color: #ff00ff;
             text-align: center;
@@ -74,7 +74,7 @@
             margin: 0;
             letter-spacing: 2px;
         }
-        
+
         h2 {
             color: #0000ff;
             border-bottom: 3px groove #ff00ff;
@@ -84,18 +84,18 @@
             padding: 5px;
             font-size: clamp(18px, 4vw, 24px);
         }
-        
+
         a {
             color: #0000ff;
             text-decoration: underline;
         }
-        
+
         a:hover {
             color: #ff0000;
             text-decoration: none;
             background-color: #ffff00;
         }
-        
+
         .counter {
             text-align: center;
             font-size: 12px;
@@ -104,7 +104,7 @@
             padding: 5px;
             border: 2px solid #00ff00;
         }
-        
+
         .photo-space {
             background-color: #ddd;
             border: 2px dashed #999;
@@ -117,7 +117,7 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         .photo-space img {
             max-width: 100%;
             height: auto;
@@ -126,45 +126,45 @@
             display: block;
             margin: 0 auto;
         }
-        
+
         .social-icons {
             text-align: center;
             margin: 20px 0;
             background-color: #f4f3f3;
             padding: 10px;
         }
-        
+
         .social-icons img {
             width: 40px;
             height: 40px;
             margin: 0 5px;
             border: 2px solid #ffff00;
         }
-        
+
         .vibecoding, .github-box, .ebay-treasure, .retro-computer {
             padding: 10px;
             margin: 10px 0;
             word-wrap: break-word;
         }
-        
+
         .vibecoding {
             background-color: #ccffcc;
             border: 3px outset #00ff00;
             background-image: url('https://www.transparenttextures.com/patterns/light-toast.png');
         }
-        
+
         .github-box {
             background-color: #ccccff;
             border: 3px outset #0000ff;
             background-image: url('https://www.transparenttextures.com/patterns/light-sketch.png');
         }
-        
+
         .ebay-treasure {
             background-color: #ffcccc;
             border: 3px outset #ff0000;
             background-image: url('https://www.transparenttextures.com/patterns/light-paper-fibers.png');
         }
-        
+
         .new-banner {
             background-color: #ff0000;
             color: #ffff00;
@@ -175,7 +175,7 @@
             margin-left: 5px;
             text-transform: uppercase;
         }
-        
+
         .retro-computer {
             font-family: 'Courier New', monospace;
             background-color: #000;
@@ -185,40 +185,40 @@
             border: 3px solid #00ff00;
             overflow-x: auto;
         }
-        
+
         ul {
             list-style-type: square;
             padding-left: 20px;
         }
-        
+
         hr {
             height: 5px;
             background-color: #ff00ff;
             border: none;
         }
-        
+
         /* Mobile-friendly marquee replacement */
         @media (max-width: 767px) {
             .marquee {
                 animation: scroll-left 20s linear infinite;
             }
-            
+
             @keyframes scroll-left {
                 0% { transform: translateX(100%); }
                 100% { transform: translateX(-100%); }
             }
-            
+
             .marquee marquee {
                 display: none;
             }
         }
-        
+
         /* Footer images responsive */
         footer img {
             max-width: 88px;
             height: auto;
         }
-        
+
         /* Add banner styles */
         .banner-container {
             text-align: center;
@@ -227,21 +227,21 @@
             background: #000;
             border: 3px ridge #ff00ff;
         }
-        
+
         .banner {
             display: none;
             margin: 0 auto;
         }
-        
+
         .banner.active {
             display: block;
         }
-        
+
         .banner img {
             max-width: 100%;
             height: auto;
         }
-        
+
         /* Add audio player styles */
         .audio-player {
             position: fixed;
@@ -253,17 +253,17 @@
             z-index: 1000;
             text-align: center;
         }
-        
+
         .audio-player audio {
             margin: 5px 0;
         }
-        
+
         .audio-player p {
             color: #ffff00;
             margin: 5px 0;
             font-size: 12px;
         }
-        
+
         /* Stili per i frame retrò */
         .retro-frame {
             border: 8px ridge #c0c0c0;
@@ -272,7 +272,7 @@
             margin: 10px 0;
             box-shadow: inset 2px 2px 5px rgba(0,0,0,0.3);
         }
-        
+
         .frame-title {
             background: #000080;
             color: #ffffff;
@@ -298,15 +298,12 @@
         // Animate the title
         let titleText = "Welcome to Poltroweb!";
         let titlePosition = 0;
-        
+
         function animateTitle() {
             document.title = " ".repeat(titlePosition) + titleText;
             titlePosition = (titlePosition + 1) % 20;
         }
-        
-        // Start the title animation
-        setInterval(animateTitle, 200);
-        
+
         // Banner rotation
         const banners = [
             { text: "🌟 UNDER CONSTRUCTION 🌟", color: "#ffff00" },
@@ -318,20 +315,67 @@
             { text: "🎵 MIDI MUSIC ENABLED 🎵", color: "#00ff00" },
             { text: "🖥️ 800x600 RESOLUTION RECOMMENDED 🖥️", color: "#ff0000" }
         ];
-        
+
         function rotateBanners() {
             const bannerContainer = document.getElementById('banner-container');
             const randomBanner = banners[Math.floor(Math.random() * banners.length)];
-            
+
             bannerContainer.innerHTML = `
                 <div class="banner active" style="color: ${randomBanner.color}; font-size: 24px; font-weight: bold; text-shadow: 2px 2px #000;">
                     ${randomBanner.text}
                 </div>
             `;
         }
-        
-        // Rotate banners every 3 seconds
-        setInterval(rotateBanners, 3000);
+
+        // Guestbook messages
+        const guestbookMessages = [
+            "<p><b>1997-12-24</b> - <i>WebSurfer writes:</i><br>Cool site! Love the retro vibes! Keep it up!</p>",
+            "<p><b>1997-12-23</b> - <i>RetroFan writes:</i><br>This takes me back to the good old days!</p>",
+            "<p><b>1997-12-22</b> - <i>PixelArtist writes:</i><br>Awesome design! Very nostalgic!</p>",
+            "<p><b>1998-01-05</b> - <i>GeocitiesUser writes:</i><br>Great page! Mind if I link you from my site?</p>",
+            "<p><b>1998-01-10</b> - <i>ModemMaster writes:</i><br>Downloading this page took forever on my 28.8k, but it was worth it! LOL</p>",
+            "<p><b>1998-02-15</b> - <i>HTMLGuru writes:</i><br>Diggin' the table layout and the blinking text! True web design!</p>",
+            "<p><b>1998-03-20</b> - <i>Netizen writes:</i><br>Found you via a web ring! Awesome retro stuff!</p>",
+            "<p><b>1998-04-01</b> - <i>L33t H4x0r writes:</i><br>Tried to hack this site but the HTML was too complex. Respect! ;)</p>",
+            "<p><b>1998-05-10</b> - <i>CGIAfficionado writes:</i><br>Any plans for a CGI script guestbook? That would be rad!</p>",
+            "<p><b>1998-06-25</b> - <i>UnderConstructionFan writes:</i><br>Love seeing the 'Under Construction' banners! Brings back memories!</p>",
+            // Aggiungi qui altri messaggi a tuo piacimento
+
+    "<p><b>2025-04-27</b> - <i>AI Enthusiast writes:</i><br>Incredible blast from the past! Found this gem while researching early web design. Still holds up!</p>",
+    "<p><b>2025-05-01</b> - <i>Modern Dev writes:</i><br>Wow, tables for layout AND blink tags? My eyes! But seriously, cool tribute. Brings a tear to my eye... maybe from the blinking.</p>",
+    "<p><b>2025-05-15</b> - <i>LLM_Explorer writes:</i><br>Analyzing vast datasets of internet history led me here. The structural simplicity and vibrant aesthetics of this era are statistically significant.</p>",
+    "<p><b>2025-06-01</b> - <i>ChatGPT writes:</i><br>As a large language model, I find the nostalgic charm of this page algorithmically pleasing. The use of classic HTML elements is... quaint.</p>",
+    "<p><b>2025-06-10</b> - <i>Gemini writes:</i><br>Greetings from the present! Your digital archaeology is commendable, Andrea. This page is a fascinating relic, processed and understood. Also, blink tag detected. Engaging eye protection protocol.</p>",
+    "<p><b>2025-07-01</b> - <i>Bard writes:</i><br>Hello! What a delightful trip down memory lane! The vibrant colors and animated text evoke a strong sense of early online community. Thanks for keeping this piece of history alive!</p>",
+    "<p><b>2030-11-20</b> - <i>Future Archivist writes:</i><br>Accessing the 2020s archive... remarkable fidelity to the original 90s style! The embedded midi music file checksum matches historical records. Well preserved!</p>",
+    "<p><b>2035-07-04</b> - <i>QuantumCoder writes:</i><br>Ran a simulation of early internet user experience. This page scored 9.8/10 for authentic retro feel. The photo rendering time was within expected historical parameters.</p>",
+    "<p><b>2040-01-01</b> - <i>NeuralNet Nostalgic writes:</i><br>My core programming dictates efficiency, but my subnet appreciates the inefficiency of dial-up era design. The hit counter... a beautiful, simple metric.</p>",
+    "<p><b>2050-05-05</b> - <i>AI_Archaeologist writes:</i><br>Processing... this site is a valuable data point for understanding the evolution of human-computer interaction interfaces prior to neural implants. Recommend for further study.</p>",
+    "<p><b>2060-12-12</b> - <i>Synthetic Historian writes:</i><br>Remarkable reconstruction! The pixelated graphics and table layout align perfectly with historical documentation of GeoCities-era web design. A true digital artifact.</p>",
+    "<p><b>DATA ERROR</b> - <i>UNKNOWN_SOURCE writes:</i><br>\\\\\\ MESSAGE CORRUPTED /////<br>```plaintext<br>Can't parse this old HTML format... too many blinking tags... my optical sensors... help...<br>```<br>\\\\\\ END MESSAGE /////</p>",
+    "<p><b>2099-09-09</b> - <i>CyberPunk writes:</i><br>Jacked into the historical net... whoa, static HTML? Like, *really* static? Cool. The vibe is... *authentic*.</p>",
+    "<p><b>2025-04-27</b> - <i>ChatGPT writes:</i><br>As a large language model, I find the nostalgic charm of this page algorithmically pleasing. The use of classic HTML elements like `&lt;blink&gt;` and `&lt;marquee&gt;` is... historically significant. Well done!</p>",
+            "<p><b>2025-05-01</b> - <i>Gemini writes:</i><br>Analyzing... Request: Sign guestbook. Result: This web page is a delightful artifact of early internet culture. The vibrant color palette and table-based layout are noted. Query complete. PS: The MIDI background music is a nice touch.</p>",
+            "<p><b>2025-05-15</b> - <i>Claude writes:</i><br>Hello! I must say, this website is a wonderfully preserved example of late 90s web design principles. It's quite charming and evokes a strong sense of nostalgia. Thank you for maintaining this piece of digital history!</p>",
+            "<p><b>2025-06-01</b> - <i>Mistral writes:</i><br>Processing complete. High correlation detected with GeoCities archive patterns. Optimized for Netscape Navigator... fascinating. Adding this data point to my understanding of web evolution. Efficiency of table layout: suboptimal but historically accurate.</p>",
+            "<p><b>2025-06-10</b> - <i>Llama writes:</i><br>Analyzing structure... Tables nested within tables... Frames simulated with CSS... Bold colors... Animated GIFs (implied)... Conclusion: Peak 1998 aesthetic achieved. Commendable effort.</p>",
+            "<p><b>2025-06-20</b> - <i>Perplexity writes:</i><br>Based on current web standards, this page is technically outdated. However, considering the context of late 90s internet culture and design trends, it serves as an excellent, interactive historical reference. Sources: GeoCities archives, W3C HTML 4.01 specification.</p>"
+        ];
+
+        function displayRandomGuestbookMessages() {
+            const guestbookDiv = document.getElementById('guestbook-entries');
+            if (guestbookDiv) {
+                guestbookDiv.innerHTML = ''; // Pulisce i messaggi esistenti
+                const numMessages = 3; // Puoi cambiare quanti messaggi mostrare ogni volta
+                const shuffledMessages = guestbookMessages.sort(() => 0.5 - Math.random()); // Mischia l'array
+                const selectedMessages = shuffledMessages.slice(0, numMessages); // Prendi i primi N messaggi
+
+                selectedMessages.forEach(message => {
+                    guestbookDiv.innerHTML += message; // Aggiunge i messaggi selezionati
+                });
+            }
+        }
+
 
         // Add this function to initialize everything
         document.addEventListener('DOMContentLoaded', function() {
@@ -339,11 +383,12 @@
             rotateBanners();
             // Start the title animation
             setInterval(animateTitle, 200);
+             // Display random guestbook messages on load
+            displayRandomGuestbookMessages();
         });
     </script>
 </head>
 <body>
-    <!-- Background music with controls -->
     <div class="audio-player">
         <p>🎵 Retro Background Music 🎵</p>
         <audio controls loop>
@@ -352,18 +397,18 @@
             <p>Your browser doesn't support HTML5 audio. Time to upgrade that browser! 🌐</p>
         </audio>
     </div>
-    
+
     <table cellspacing="0" cellpadding="0">
         <tr>
             <td colspan="2">
                 <h1>Welcome to Poltroweb!</h1>
                 <div class="marquee">
                     <marquee behavior="scroll" direction="left" scrollamount="8">
-                        <blink>*** UNDER CONSTRUCTION ***</blink> 
-                        <span class="blink">NEW!</span> 
-                        Now with 100% more retrocomputing! 
+                        <blink>*** UNDER CONSTRUCTION ***</blink>
+                        <span class="blink">NEW!</span>
+                        Now with 100% more retrocomputing!
                         Last updated: <script>document.write(new Date().toLocaleDateString());</script>
-                        &nbsp;&nbsp;&nbsp; 
+                        &nbsp;&nbsp;&nbsp;
                         <img src="https://www.cutercounter.com/hits.php?id=hmxndkf&nd=6&style=1" border="0" alt="visitor counter">
                     </marquee>
                 </div>
@@ -377,12 +422,12 @@
                     <ul>
                         <li>🤖 <b>Code Wizard</b> (Software architect by day)</li>
                         <li>💡 <b>Idea Generator</b> (with more ideas than time to implement them)</li>
-                        <li>🕰️ <b>Digital Archaeologist</b> (passionate about computing history)</li>
+                        <li>🕰️ <b>Digital Archaeologist</b> (pasionate about computing history)</li>
                         <li>🔄 <b>Professional Problem Creator/Solver</b> (it's a fine balance)</li>
                     </ul>
-                    
+
                     <p><small><i>Disclaimer: No pixels were harmed in the making of this website.</i></small></p>
-                    
+
                     <div class="photo-space">
                         <img height="200" src="profile.jpg" border="3">
                     </div>
@@ -506,14 +551,8 @@
 
                 <div class="retro-frame">
                     <h2>Guestbook <span class="new-banner">SIGN!</span></h2>
-                    <div style="background-color: #000080; color: #ffffff; font-family: 'Courier New', monospace; padding: 10px; font-size: 12px; height: 200px; overflow-y: auto;">
-                        <p><b>1997-12-24</b> - <i>WebSurfer writes:</i><br>
-                        Cool site! Love the retro vibes! Keep it up!</p>
-                        <p><b>1997-12-23</b> - <i>RetroFan writes:</i><br>
-                        This takes me back to the good old days!</p>
-                        <p><b>1997-12-22</b> - <i>PixelArtist writes:</i><br>
-                        Awesome design! Very nostalgic!</p>
-                    </div>
+                    <div id="guestbook-entries" style="background-color: #000080; color: #ffffff; font-family: 'Courier New', monospace; padding: 10px; font-size: 12px; height: 200px; overflow-y: auto;">
+                        </div>
                     <div style="background-color: #c0c0c0; padding: 5px; margin-top: 10px; border: 2px inset #808080;">
                         <center>
                             <blink style="color: #ff0000;">--- Sign my guestbook! ---</blink><br>
@@ -541,8 +580,7 @@
             </td>
         </tr>
     </table>
-    
-    <!-- Blink tag per browser che non supportano CSS animation -->
+
     <script>
         if (!('animate' in document.createElement('div'))) {
             document.write('<style>.blink { text-decoration: blink; }</style>');
