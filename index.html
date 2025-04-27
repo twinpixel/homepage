@@ -332,6 +332,14 @@
         
         // Rotate banners every 3 seconds
         setInterval(rotateBanners, 3000);
+
+        // Add this function to initialize everything
+        document.addEventListener('DOMContentLoaded', function() {
+            // Start the banner rotation
+            rotateBanners();
+            // Start the title animation
+            setInterval(animateTitle, 200);
+        });
     </script>
 </head>
 <body>
@@ -381,6 +389,16 @@
                 </div>
 
                 <div class="retro-frame">
+                    <div class="social-impact" style="background-color: #ffecb3; border: 3px outset #ffa500; background-image: url('https://www.transparenttextures.com/patterns/light-paper-fibers.png'); padding: 10px;">
+                        <h2>Social Impact</h2>
+                        <p>Because technology should be accessible to everyone:</p>
+                        <ul>
+                            <li><a href="https://www.tutticonnessi.it/" target="_blank">TuttiConnessi</a> - Co-founder of this initiative born during COVID-19 pandemic to provide computers to disadvantaged students, still active in fighting digital divide</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="retro-frame">
                     <div class="vibecoding">
                         <h2>Vibecoding Projects <span class="new-banner">HOT</span></h2>
                         <p>Where my coding meets creativity and questionable life choices:</p>
@@ -422,6 +440,7 @@
                             <li>Old-school programming enthusiast</li>
                             <li>Believer that 8-bit graphics had more soul</li>
                             <li>Proud owner of several heavy CRT monitors</li>
+                            <li>Founder of <a href="https://mupin.it/" target="_blank">MUPIN - Museo Piemontese dell'Informatica</a>, a museum dedicated to computer history and retrocomputing</li>
                         </ul>
                     </div>
                 </div>
@@ -483,6 +502,24 @@
                         </a>
                         <img src="https://web.archive.org/web/19990209022512im_/http://www.webring.org/cgi-bin/webring?ring=retrocomputing;id=1;next" alt="Next">
                     </p>
+                </div>
+
+                <div class="retro-frame">
+                    <h2>Guestbook <span class="new-banner">SIGN!</span></h2>
+                    <div style="background-color: #000080; color: #ffffff; font-family: 'Courier New', monospace; padding: 10px; font-size: 12px; height: 200px; overflow-y: auto;">
+                        <p><b>1997-12-24</b> - <i>WebSurfer writes:</i><br>
+                        Cool site! Love the retro vibes! Keep it up!</p>
+                        <p><b>1997-12-23</b> - <i>RetroFan writes:</i><br>
+                        This takes me back to the good old days!</p>
+                        <p><b>1997-12-22</b> - <i>PixelArtist writes:</i><br>
+                        Awesome design! Very nostalgic!</p>
+                    </div>
+                    <div style="background-color: #c0c0c0; padding: 5px; margin-top: 10px; border: 2px inset #808080;">
+                        <center>
+                            <blink style="color: #ff0000;">--- Sign my guestbook! ---</blink><br>
+                            <small>(Under construction... like everything else!)</small>
+                        </center>
+                    </div>
                 </div>
             </td>
         </tr>
