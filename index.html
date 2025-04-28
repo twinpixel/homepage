@@ -293,6 +293,25 @@
         .social-icons {
             margin: 0;
         }
+
+        /* Add styles for slow image loading */
+        #profile-pic {
+            /* Start fully clipped (invisible) */
+            clip-path: inset(100% 0 0 0);
+            /* Define the animation - INCREASED DURATION TO 10s */
+            animation: slow-load 10s linear forwards; /* 10 seconds duration */
+            /* Ensure smooth rendering */
+            backface-visibility: hidden;
+        }
+
+        @keyframes slow-load {
+            0% {
+                clip-path: inset(100% 0 0 0); /* Start clipped */
+            }
+            100% {
+                clip-path: inset(0% 0 0 0);   /* End fully revealed */
+            }
+        }
     </style>
     <script>
         // Animate the title
@@ -429,7 +448,7 @@
                     <p><small><i>Disclaimer: No pixels were harmed in the making of this website.</i></small></p>
 
                     <div class="photo-space">
-                        <img height="200" src="profile.jpg" border="3">
+                        <img id="profile-pic" height="200" src="profile.jpg" border="3">
                     </div>
                 </div>
 
