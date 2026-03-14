@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            background-color: #000066;
+           background-color: #000066;
             font-family: 'Comic Sans MS', 'Arial', sans-serif;
             color: #000;
             margin: 0;
@@ -373,6 +373,90 @@
             100% { transform: rotate(360deg); }
         }
 
+        /* Frame simulation styles */
+        .frame-simulator {
+            position: relative;
+            border: 8px ridge #c0c0c0;
+            background: #c0c0c0;
+            margin: 10px;
+            box-shadow: inset 2px 2px 5px rgba(0,0,0,0.3);
+        }
+
+        .frame-title-bar {
+            background: #000080;
+            color: #ffffff;
+            padding: 2px 5px;
+            font-family: 'MS Sans Serif', 'Arial', sans-serif;
+            font-size: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #c0c0c0;
+        }
+
+        .frame-controls {
+            display: flex;
+            gap: 2px;
+        }
+
+        .frame-button {
+            width: 16px;
+            height: 16px;
+            background: #c0c0c0;
+            border: 1px solid #ffffff;
+            border-right-color: #808080;
+            border-bottom-color: #808080;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            cursor: pointer;
+        }
+
+        .frame-content {
+            background: #ffffff;
+            padding: 10px;
+            height: calc(100% - 24px);
+            overflow: auto;
+        }
+
+        .frame-resize-handle {
+            position: absolute;
+            background: #c0c0c0;
+            z-index: 1000;
+        }
+
+        .frame-resize-handle.horizontal {
+            height: 8px;
+            left: 0;
+            right: 0;
+            cursor: ns-resize;
+        }
+
+        .frame-resize-handle.vertical {
+            width: 8px;
+            top: 0;
+            bottom: 0;
+            cursor: ew-resize;
+        }
+
+        /* Modify existing styles to work with frames */
+        .retro-frame {
+            margin: 0;
+            border: none;
+            height: 100%;
+        }
+
+        table {
+            border: none;
+            background: none;
+        }
+
+        td {
+            border: none;
+            padding: 0;
+        }
+
     </style>
     <script>
         // Animate the title
@@ -466,6 +550,81 @@
             setInterval(animateTitle, 200);
              // Display random guestbook messages on load
             displayRandomGuestbookMessages();
+
+            // Frame simulation
+            const frames = document.querySelectorAll('.frame-simulator');
+            
+            frames.forEach(frame => {
+                // Add resize functionality
+                const resizeHandle = frame.querySelector('.frame-resize-handle');
+                if (resizeHandle) {
+                    let isResizing = false;
+                    let startX, startY, startWidth, startHeight;
+
+                    resizeHandle.addEventListener('mousedown', (e) => {
+                        isResizing = true;
+                        startX = e.clientX;
+                        startY = e.clientY;
+                        startWidth = frame.offsetWidth;
+                        startHeight = frame.offsetHeight;
+                    });
+
+                    document.addEventListener('mousemove', (e) => {
+                        if (!isResizing) return;
+                        
+                        if (resizeHandle.classList.contains('horizontal')) {
+                            const newHeight = startHeight + (e.clientY - startY);
+                            frame.style.height = `${newHeight}px`;
+                        } else if (resizeHandle.classList.contains('vertical')) {
+                            const newWidth = startWidth + (e.clientX - startX);
+                            frame.style.width = `${newWidth}px`;
+                        }
+                    });
+
+                    document.addEventListener('mouseup', () => {
+                        isResizing = false;
+                    });
+                }
+
+                // Add minimize/maximize functionality
+                const minimizeBtn = frame.querySelector('.frame-button.minimize');
+                const maximizeBtn = frame.querySelector('.frame-button.maximize');
+                const closeBtn = frame.querySelector('.frame-button.close');
+                const content = frame.querySelector('.frame-content');
+
+                if (minimizeBtn) {
+                    minimizeBtn.addEventListener('click', () => {
+                        content.style.display = content.style.display === 'none' ? 'block' : 'none';
+                    });
+                }
+
+                if (maximizeBtn) {
+                    maximizeBtn.addEventListener('click', () => {
+                        frame.classList.toggle('maximized');
+                        if (frame.classList.contains('maximized')) {
+                            frame.style.position = 'fixed';
+                            frame.style.top = '0';
+                            frame.style.left = '0';
+                            frame.style.width = '100%';
+                            frame.style.height = '100%';
+                            frame.style.zIndex = '1000';
+                        } else {
+                            frame.style.position = '';
+                            frame.style.top = '';
+                            frame.style.left = '';
+                            frame.style.width = '';
+                            frame.style.height = '';
+                            frame.style.zIndex = '';
+                        }
+                    });
+                }
+
+                if (closeBtn) {
+                    closeBtn.addEventListener('click', () => {
+                        frame.style.display = 'none';
+                    });
+                }
+            });
         });
     </script>
 </head>
@@ -482,49 +641,71 @@
     <table cellspacing="0" cellpadding="0">
         <tr>
             <td colspan="2">
-                <h1>Welcome to Poltroweb! <span class="spin">✨</span></h1>
-                <div class="marquee">
-                    <marquee behavior="scroll" direction="left" scrollamount="10">
-                        <span class="blink">*** UNDER CONSTRUCTION ***</span>
-                        &nbsp;&nbsp;&nbsp;<span class="flashy">EXTRA BLINKY!!!</span>
-                        &nbsp;&nbsp;&nbsp;<span class="attention">NEW!</span>
-                        Now with 100% more retrocomputing!
-                        Last updated: <script>document.write(new Date().toLocaleDateString());</script>
-                        &nbsp;&nbsp;&nbsp;
-                        <img src="https://www.cutercounter.com/hits.php?id=hmxndkf&nd=6&style=1" border="0" alt="visitor counter">
-                        &nbsp;&nbsp;&nbsp;<span class="blink">DOWNLOAD MORE RAM!</span>
-                    </marquee>
+                <div class="frame-simulator">
+                    <div class="frame-title-bar">
+                        <span>Welcome to Poltroweb!</span>
+                        <div class="frame-controls">
+                            <div class="frame-button minimize">_</div>
+                            <div class="frame-button maximize">□</div>
+                            <div class="frame-button close">×</div>
+                        </div>
+                    </div>
+                    <div class="frame-content">
+                        <h1>Welcome to Poltroweb! <span class="spin">✨</span></h1>
+                        <div class="marquee">
+                            <marquee behavior="scroll" direction="left" scrollamount="10">
+                                <span class="blink">*** UNDER CONSTRUCTION ***</span>
+                                &nbsp;&nbsp;&nbsp;<span class="flashy">EXTRA BLINKY!!!</span>
+                                &nbsp;&nbsp;&nbsp;<span class="attention">NEW!</span>
+                                Now with 100% more retrocomputing!
+                                Last updated: <script>document.write(new Date().toLocaleDateString());</script>
+                                &nbsp;&nbsp;&nbsp;
+                                <img src="https://www.cutercounter.com/hits.php?id=hmxndkf&nd=6&style=1" border="0" alt="visitor counter">
+                                &nbsp;&nbsp;&nbsp;<span class="blink">DOWNLOAD MORE RAM!</span>
+                            </marquee>
+                        </div>
+                    </div>
                 </div>
             </td>
         </tr>
         <tr>
             <td width="70%">
-                <div class="retro-frame">
-                    <h2>About Me <span class="spin">👤</span></h2>
-                    <p>Hi there! I'm Andrea Poltronieri, and here's what the voices in my head tell me I am:</p>
-                    <ul>
-                        <li>🤖 <b>Code Wizard</b> (Software architect by day)</li>
-                        <li>💡 <b>Idea Generator</b> (with more ideas than time to implement them) <span class="flashy">HOT!</span></li>
-                        <li>🕰️ <b>Digital Archaeologist</b> (pasionate about computing history)</li>
-                        <li>🔄 <b>Professional Problem Creator/Solver</b> (it's a fine balance) <span class="attention">Warning!</span></li>
-                    </ul>
-
-                    <p><small><i>Disclaimer: No pixels were harmed in the making of this website.</i></small></p>
-
-                    <div class="photo-space">
-                        <img id="profile-pic" height="200" src="profile.jpg" border="3" alt="Andrea Poltronieri">
+                <div class="frame-simulator">
+                    <div class="frame-title-bar">
+                        <span>Main Content</span>
+                        <div class="frame-controls">
+                            <div class="frame-button minimize">_</div>
+                            <div class="frame-button maximize">□</div>
+                            <div class="frame-button close">×</div>
+                        </div>
                     </div>
-                </div>
+                    <div class="frame-content">
+                        <div class="retro-frame">
+                            <h2>About Me <span class="spin">👤</span></h2>
+                            <p>Hi there! I'm Andrea Poltronieri, and here's what the voices in my head tell me I am:</p>
+                            <ul>
+                                <li>🤖 <b>Code Wizard</b> (Software architect by day)</li>
+                                <li>💡 <b>Idea Generator</b> (with more ideas than time to implement them) <span class="flashy">HOT!</span></li>
+                                <li>🕰️ <b>Digital Archaeologist</b> (pasionate about computing history)</li>
+                                <li>🔄 <b>Professional Problem Creator/Solver</b> (it's a fine balance) <span class="attention">Warning!</span></li>
+                            </ul>
 
-                <div class="retro-frame">
-                    <div class="social-impact" style="background-color: #ffecb3; border: 3px outset #ffa500; background-image: url('https://www.transparenttextures.com/patterns/light-paper-fibers.png'); padding: 10px;">
-                        <h2>Social Impact <span class="spin">🌍</span></h2>
-                        <p>Because technology should be accessible to everyone:</p>
-                        <ul>
-                            <li><a href="https://www.tutticonnessi.it/" target="_blank">TuttiConnessi</a> - Co-founder of this initiative born during COVID-19 pandemic to provide computers to disadvantaged students, still active in fighting digital divide <span class="blink">Awesome!</span></li>
-                        </ul>
-                    </div>
-                </div>
+                            <p><small><i>Disclaimer: No pixels were harmed in the making of this website.</i></small></p>
+
+                            <div class="photo-space">
+                                <img id="profile-pic" height="200" src="profile.jpg" border="3" alt="Andrea Poltronieri">
+                            </div>
+                        </div>
+
+                        <div class="retro-frame">
+                            <div class="social-impact" style="background-color: #ffecb3; border: 3px outset #ffa500; background-image: url('https://www.transparenttextures.com/patterns/light-paper-fibers.png'); padding: 10px;">
+                                <h2>Social Impact <span class="spin">🌍</span></h2>
+                                <p>Because technology should be accessible to everyone:</p>
+                                <ul>
+                                    <li><a href="https://www.tutticonnessi.it/" target="_blank">TuttiConnessi</a> - Co-founder of this initiative born during COVID-19 pandemic to provide computers to disadvantaged students, still active in fighting digital divide <span class="blink">Awesome!</span></li>
+                                </ul>
+                            </div>
+                        </div>
 
                 <div class="retro-frame">
                     <div class="vibecoding">
@@ -532,7 +713,7 @@
                         <p>Where my coding meets creativity and questionable life choices:</p>
                         <ul>
                         	<li><a href="https://www.elettricarica.it/about.html" target="_blank">Elettricarica</a> - Helping electric vehicles find juice in Italy (because running out of power is only fun in Mario Kart)</li>
-                            <li><a href="https://github.com/twinpixel/cinematch" target="_blank">CineMatch</a> - AI that picks movies better than your indecisive friends <span class="attention">Check it out!</span></li>
+                            <li><a href="https://www.poltronieri.info/cm/" target="_blank">CineMatch</a> - AI that picks movies better than your indecisive friends <span class="attention">Check it out!</span></li>
                             <li><a href="https://github.com/twinpixel/scent_mate" target="_blank">ScentMate</a> - Because choosing perfume shouldn't require a chemistry degree <span class="flashy">Smells good!</span></li>
                             <li>More half-baked ideas in development (patience recommended) <span class="blink">Soon!</span></li>
                         </ul>
@@ -572,16 +753,29 @@
                         </ul>
                     </div>
                 </div>
-            </td>
-            <td width="30%" valign="top">
-                <div class="retro-frame">
-                    <h2>Social Connections <span class="spin">🤝</span></h2>
-                    <div class="social-icons">
-                        <a href="https://www.facebook.com/apoltronieri" target="_blank"><img src="https://simpleicons.org/icons/facebook.svg" alt="Facebook"></a>
-                        <a href="https://www.instagram.com/andreapoltronieri/" target="_blank"><img src="https://simpleicons.org/icons/instagram.svg" alt="Instagram"></a>
-                        <a href="https://www.linkedin.com/in/andrea-poltronieri-02b788/" target="_blank"><img src="https://static-00.iconduck.com/assets.00/linkedin-with-circle-icon-2048x2048-np6yltn1.png" alt="Linkedin"></a>
                     </div>
+                    <div class="frame-resize-handle horizontal"></div>
                 </div>
+            </td>
+            <td width="30%">
+                <div class="frame-simulator">
+                    <div class="frame-title-bar">
+                        <span>Sidebar</span>
+                        <div class="frame-controls">
+                            <div class="frame-button minimize">_</div>
+                            <div class="frame-button maximize">□</div>
+                            <div class="frame-button close">×</div>
+                        </div>
+                    </div>
+                    <div class="frame-content">
+                        <div class="retro-frame">
+                            <h2>Social Connections <span class="spin">🤝</span></h2>
+                            <div class="social-icons">
+                                <a href="https://www.facebook.com/apoltronieri" target="_blank"><img src="https://simpleicons.org/icons/facebook.svg" alt="Facebook"></a>
+                                <a href="https://www.instagram.com/andreapoltronieri/" target="_blank"><img src="https://simpleicons.org/icons/instagram.svg" alt="Instagram"></a>
+                                <a href="https://www.linkedin.com/in/andrea-poltronieri-02b788/" target="_blank"><img src="https://static-00.iconduck.com/assets.00/linkedin-with-circle-icon-2048x2048-np6yltn1.png" alt="Linkedin"></a>
+                            </div>
+                        </div>
 
                 <div class="retro-frame">
                     <div class="ebay-treasure">
@@ -643,24 +837,40 @@
                         </center>
                     </div>
                 </div>
+                    </div>
+                    <div class="frame-resize-handle horizontal"></div>
+                    <div class="frame-resize-handle vertical"></div>
+                </div>
             </td>
         </tr>
         <tr>
-            <td colspan="2" align="center">
-                <div id="banner-container" class="banner-container"></div>
-                <hr>
-                <p>© <script>document.write(new Date().getFullYear());</script> Andrea Poltronieri - All Rights Reserved (maybe)</p>
-                <p>
-                    <a href="javascript:alert('Best viewed with Netscape Navigator 4.0 or Internet Explorer 5.0 at 800x600 resolution!\n\nSet your monitor to 256 colors for optimal experience!')">
-                        <img width="88" height="31" src="https://web.archive.org/web/19981212041316im_/http://www.microsoft.com/library/toolbar/3.0/images/banners/ie_logo.gif" border="0" alt="Microsoft Internet Explorer">
-                    </a>
-                    <a href="javascript:alert('This site looks best with Netscape Navigator!')">
-                        <img width="88" height="31" src="https://web.archive.org/web/19990209022512im_/http://home.netscape.com/eng/communicator4/communicator_download_now.gif" border="0" alt="Netscape Now!">
-                    </a>
-                    <br>
-                    <img src="https://web.archive.org/web/19990209022512im_/http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01!" border="0">
-                     <span class="blink">Powered by pure HTML!</span>
-                </p>
+            <td colspan="2">
+                <div class="frame-simulator">
+                    <div class="frame-title-bar">
+                        <span>Footer</span>
+                        <div class="frame-controls">
+                            <div class="frame-button minimize">_</div>
+                            <div class="frame-button maximize">□</div>
+                            <div class="frame-button close">×</div>
+                        </div>
+                    </div>
+                    <div class="frame-content">
+                        <div id="banner-container" class="banner-container"></div>
+                        <hr>
+                        <p>© <script>document.write(new Date().getFullYear());</script> Andrea Poltronieri - All Rights Reserved (maybe)</p>
+                        <p>
+                            <a href="javascript:alert('Best viewed with Netscape Navigator 4.0 or Internet Explorer 5.0 at 800x600 resolution!\n\nSet your monitor to 256 colors for optimal experience!')">
+                                <img width="88" height="31" src="https://web.archive.org/web/19981212041316im_/http://www.microsoft.com/library/toolbar/3.0/images/banners/ie_logo.gif" border="0" alt="Microsoft Internet Explorer">
+                            </a>
+                            <a href="javascript:alert('This site looks best with Netscape Navigator!')">
+                                <img width="88" height="31" src="https://web.archive.org/web/19990209022512im_/http://home.netscape.com/eng/communicator4/communicator_download_now.gif" border="0" alt="Netscape Now!">
+                            </a>
+                            <br>
+                            <img src="https://web.archive.org/web/19990209022512im_/http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01!" border="0">
+                             <span class="blink">Powered by pure HTML!</span>
+                        </p>
+                    </div>
+                </div>
             </td>
         </tr>
     </table>
