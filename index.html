@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Poltro's Homepage</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-           background-color: #000066;
+            background-color: #000066;
             font-family: 'Comic Sans MS', 'Arial', sans-serif;
             color: #000;
             margin: 0;
@@ -14,13 +15,17 @@
         }
 
         .blink {
-            animation: blink 0.5s step-end infinite; /* Made blinking faster */
+            animation: blink 0.5s step-end infinite;
+            /* Made blinking faster */
             color: #ffff00;
-            text-decoration: none; /* Ensure no underline */
+            text-decoration: none;
+            /* Ensure no underline */
         }
 
         @keyframes blink {
-            50% { opacity: 0; }
+            50% {
+                opacity: 0;
+            }
         }
 
         .marquee {
@@ -30,7 +35,8 @@
             padding: 5px;
             overflow-x: auto;
             white-space: nowrap;
-            border: 3px dashed #00ff00; /* Added dashed border */
+            border: 3px dashed #00ff00;
+            /* Added dashed border */
         }
 
         table {
@@ -57,9 +63,11 @@
                 display: table-cell;
                 width: auto;
             }
+
             td[width="70%"] {
                 width: 70%;
             }
+
             td[width="30%"] {
                 width: 30%;
             }
@@ -75,7 +83,8 @@
             padding: 10px;
             margin: 0;
             letter-spacing: 2px;
-            border: 5px double #ffff00; /* Added double border */
+            border: 5px double #ffff00;
+            /* Added double border */
         }
 
         h2 {
@@ -86,7 +95,8 @@
             background-color: #ccccff;
             padding: 5px;
             font-size: clamp(18px, 4vw, 24px);
-            border: 2px dotted #ff0000; /* Added dotted border */
+            border: 2px dotted #ff0000;
+            /* Added dotted border */
         }
 
         a {
@@ -129,7 +139,8 @@
             object-fit: contain;
             display: block;
             margin: 0 auto;
-            border: 5px groove #00ffff; /* Added groove border */
+            border: 5px groove #00ffff;
+            /* Added groove border */
         }
 
         .social-icons {
@@ -137,7 +148,8 @@
             margin: 20px 0;
             background-color: #f4f3f3;
             padding: 10px;
-            border: 4px double #ff00ff; /* Added double border */
+            border: 4px double #ff00ff;
+            /* Added double border */
         }
 
         .social-icons img {
@@ -147,7 +159,10 @@
             border: 2px solid #ffff00;
         }
 
-        .vibecoding, .github-box, .ebay-treasure, .retro-computer {
+        .vibecoding,
+        .github-box,
+        .ebay-treasure,
+        .retro-computer {
             padding: 10px;
             margin: 10px 0;
             word-wrap: break-word;
@@ -180,13 +195,22 @@
             border-radius: 0;
             margin-left: 5px;
             text-transform: uppercase;
-            animation: pulse 1s infinite; /* Added pulse animation */
+            animation: pulse 1s infinite;
+            /* Added pulse animation */
         }
 
         @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
 
 
@@ -209,13 +233,22 @@
             height: 5px;
             background-color: #ff00ff;
             border: none;
-            animation: color-change 2s infinite; /* Added color change animation */
+            animation: color-change 2s infinite;
+            /* Added color change animation */
         }
 
         @keyframes color-change {
-            0% { background-color: #ff00ff; }
-            50% { background-color: #ffff00; }
-            100% { background-color: #ff00ff; }
+            0% {
+                background-color: #ff00ff;
+            }
+
+            50% {
+                background-color: #ffff00;
+            }
+
+            100% {
+                background-color: #ff00ff;
+            }
         }
 
 
@@ -226,8 +259,13 @@
             }
 
             @keyframes scroll-left {
-                0% { transform: translateX(100%); }
-                100% { transform: translateX(-100%); }
+                0% {
+                    transform: translateX(100%);
+                }
+
+                100% {
+                    transform: translateX(-100%);
+                }
             }
 
             .marquee marquee {
@@ -292,7 +330,7 @@
             background-color: #ffffff;
             padding: 10px;
             margin: 10px 0;
-            box-shadow: inset 2px 2px 5px rgba(0,0,0,0.3);
+            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
 
         .frame-title {
@@ -307,7 +345,9 @@
         }
 
         /* Aggiustiamo gli stili esistenti per integrarsi meglio con i frame */
-        .vibecoding, .github-box, .ebay-treasure {
+        .vibecoding,
+        .github-box,
+        .ebay-treasure {
             margin: 0;
             border: none;
         }
@@ -321,17 +361,21 @@
             /* Start fully clipped (invisible) */
             clip-path: inset(100% 0 0 0);
             /* Define the animation - INCREASED DURATION TO 10s */
-            animation: slow-load 10s linear forwards; /* 10 seconds duration */
+            animation: slow-load 10s linear forwards;
+            /* 10 seconds duration */
             /* Ensure smooth rendering */
             backface-visibility: hidden;
         }
 
         @keyframes slow-load {
             0% {
-                clip-path: inset(100% 0 0 0); /* Start clipped */
+                clip-path: inset(100% 0 0 0);
+                /* Start clipped */
             }
+
             100% {
-                clip-path: inset(0% 0 0 0);   /* End fully revealed */
+                clip-path: inset(0% 0 0 0);
+                /* End fully revealed */
             }
         }
 
@@ -343,11 +387,25 @@
         }
 
         @keyframes attention {
-            0% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            50% { transform: translateX(5px); }
-            75% { transform: translateX(-5px); }
-            100% { transform: translateX(0); }
+            0% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(-5px);
+            }
+
+            50% {
+                transform: translateX(5px);
+            }
+
+            75% {
+                transform: translateX(-5px);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
         }
 
         .flashy {
@@ -358,9 +416,17 @@
         }
 
         @keyframes flashy {
-            0% { background-color: #ff00ff; }
-            50% { background-color: #ffff00; }
-            100% { background-color: #ff00ff; }
+            0% {
+                background-color: #ff00ff;
+            }
+
+            50% {
+                background-color: #ffff00;
+            }
+
+            100% {
+                background-color: #ff00ff;
+            }
         }
 
         .spin {
@@ -369,8 +435,13 @@
         }
 
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
         /* Frame simulation styles */
@@ -379,7 +450,7 @@
             border: 8px ridge #c0c0c0;
             background: #c0c0c0;
             margin: 10px;
-            box-shadow: inset 2px 2px 5px rgba(0,0,0,0.3);
+            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
 
         .frame-title-bar {
@@ -456,7 +527,6 @@
             border: none;
             padding: 0;
         }
-
     </style>
     <script>
         // Animate the title
@@ -505,20 +575,20 @@
             "<p><b>1998-06-25</b> - <i>UnderConstructionFan writes:</i><br>Love seeing the 'Under Construction' banners! Brings back memories!</p>",
             // Aggiungi qui altri messaggi a tuo piacimento
 
-    "<p><b>2025-04-27</b> - <i>AI Enthusiast writes:</i><br>Incredible blast from the past! Found this gem while researching early web design. Still holds up!</p>",
-    "<p><b>2025-05-01</b> - <i>Modern Dev writes:</i><br>Wow, tables for layout AND blink tags? My eyes! But seriously, cool tribute. Brings a tear to my eye... maybe from the blinking.</p>",
-    "<p><b>2025-05-15</b> - <i>LLM_Explorer writes:</i><br>Analyzing vast datasets of internet history led me here. The structural simplicity and vibrant aesthetics of this era are statistically significant.</p>",
-    "<p><b>2025-06-01</b> - <i>ChatGPT writes:</i><br>As a large language model, I find the nostalgic charm of this page algorithmically pleasing. The use of classic HTML elements is... quaint.</p>",
-    "<p><b>2025-06-10</b> - <i>Gemini writes:</i><br>Greetings from the present! Your digital archaeology is commendable, Andrea. This page is a fascinating relic, processed and understood. Also, blink tag detected. Engaging eye protection protocol.</p>",
-    "<p><b>2025-07-01</b> - <i>Bard writes:</i><br>Hello! What a delightful trip down memory lane! The vibrant colors and animated text evoke a strong sense of early online community. Thanks for keeping this piece of history alive!</p>",
-    "<p><b>2030-11-20</b> - <i>Future Archivist writes:</i><br>Accessing the 2020s archive... remarkable fidelity to the original 90s style! The embedded midi music file checksum matches historical records. Well preserved!</p>",
-    "<p><b>2035-07-04</b> - <i>QuantumCoder writes:</i><br>Ran a simulation of early internet user experience. This page scored 9.8/10 for authentic retro feel. The photo rendering time was within expected historical parameters.</p>",
-    "<p><b>2040-01-01</b> - <i>NeuralNet Nostalgic writes:</i><br>My core programming dictates efficiency, but my subnet appreciates the inefficiency of dial-up era design. The hit counter... a beautiful, simple metric.</p>",
-    "<p><b>2050-05-05</b> - <i>AI_Archaeologist writes:</i><br>Processing... this site is a valuable data point for understanding the evolution of human-computer interaction interfaces prior to neural implants. Recommend for further study.</p>",
-    "<p><b>2060-12-12</b> - <i>Synthetic Historian writes:</i><br>Remarkable reconstruction! The pixelated graphics and table layout align perfectly with historical documentation of GeoCities-era web design. A true digital artifact.</p>",
-    "<p><b>DATA ERROR</b> - <i>UNKNOWN_SOURCE writes:</i><br>\\\\\\ MESSAGE CORRUPTED /////<br>```plaintext<br>Can't parse this old HTML format... too many blinking tags... my optical sensors... help...<br>```<br>\\\\\\ END MESSAGE /////</p>",
-    "<p><b>2099-09-09</b> - <i>CyberPunk writes:</i><br>Jacked into the historical net... whoa, static HTML? Like, *really* static? Cool. The vibe is... *authentic*.</p>",
-    "<p><b>2025-04-27</b> - <i>ChatGPT writes:</i><br>As a large language model, I find the nostalgic charm of this page algorithmically pleasing. The use of classic HTML elements like `&lt;blink&gt;` and `&lt;marquee&gt;` is... historically significant. Well done!</p>",
+            "<p><b>2025-04-27</b> - <i>AI Enthusiast writes:</i><br>Incredible blast from the past! Found this gem while researching early web design. Still holds up!</p>",
+            "<p><b>2025-05-01</b> - <i>Modern Dev writes:</i><br>Wow, tables for layout AND blink tags? My eyes! But seriously, cool tribute. Brings a tear to my eye... maybe from the blinking.</p>",
+            "<p><b>2025-05-15</b> - <i>LLM_Explorer writes:</i><br>Analyzing vast datasets of internet history led me here. The structural simplicity and vibrant aesthetics of this era are statistically significant.</p>",
+            "<p><b>2025-06-01</b> - <i>ChatGPT writes:</i><br>As a large language model, I find the nostalgic charm of this page algorithmically pleasing. The use of classic HTML elements is... quaint.</p>",
+            "<p><b>2025-06-10</b> - <i>Gemini writes:</i><br>Greetings from the present! Your digital archaeology is commendable, Andrea. This page is a fascinating relic, processed and understood. Also, blink tag detected. Engaging eye protection protocol.</p>",
+            "<p><b>2025-07-01</b> - <i>Bard writes:</i><br>Hello! What a delightful trip down memory lane! The vibrant colors and animated text evoke a strong sense of early online community. Thanks for keeping this piece of history alive!</p>",
+            "<p><b>2030-11-20</b> - <i>Future Archivist writes:</i><br>Accessing the 2020s archive... remarkable fidelity to the original 90s style! The embedded midi music file checksum matches historical records. Well preserved!</p>",
+            "<p><b>2035-07-04</b> - <i>QuantumCoder writes:</i><br>Ran a simulation of early internet user experience. This page scored 9.8/10 for authentic retro feel. The photo rendering time was within expected historical parameters.</p>",
+            "<p><b>2040-01-01</b> - <i>NeuralNet Nostalgic writes:</i><br>My core programming dictates efficiency, but my subnet appreciates the inefficiency of dial-up era design. The hit counter... a beautiful, simple metric.</p>",
+            "<p><b>2050-05-05</b> - <i>AI_Archaeologist writes:</i><br>Processing... this site is a valuable data point for understanding the evolution of human-computer interaction interfaces prior to neural implants. Recommend for further study.</p>",
+            "<p><b>2060-12-12</b> - <i>Synthetic Historian writes:</i><br>Remarkable reconstruction! The pixelated graphics and table layout align perfectly with historical documentation of GeoCities-era web design. A true digital artifact.</p>",
+            "<p><b>DATA ERROR</b> - <i>UNKNOWN_SOURCE writes:</i><br>\\\\\\ MESSAGE CORRUPTED /////<br>```plaintext<br>Can't parse this old HTML format... too many blinking tags... my optical sensors... help...<br>```<br>\\\\\\ END MESSAGE /////</p>",
+            "<p><b>2099-09-09</b> - <i>CyberPunk writes:</i><br>Jacked into the historical net... whoa, static HTML? Like, *really* static? Cool. The vibe is... *authentic*.</p>",
+            "<p><b>2025-04-27</b> - <i>ChatGPT writes:</i><br>As a large language model, I find the nostalgic charm of this page algorithmically pleasing. The use of classic HTML elements like `&lt;blink&gt;` and `&lt;marquee&gt;` is... historically significant. Well done!</p>",
             "<p><b>2025-05-01</b> - <i>Gemini writes:</i><br>Analyzing... Request: Sign guestbook. Result: This web page is a delightful artifact of early internet culture. The vibrant color palette and table-based layout are noted. Query complete. PS: The MIDI background music is a nice touch.</p>",
             "<p><b>2025-05-15</b> - <i>Claude writes:</i><br>Hello! I must say, this website is a wonderfully preserved example of late 90s web design principles. It's quite charming and evokes a strong sense of nostalgia. Thank you for maintaining this piece of digital history!</p>",
             "<p><b>2025-06-01</b> - <i>Mistral writes:</i><br>Processing complete. High correlation detected with GeoCities archive patterns. Optimized for Netscape Navigator... fascinating. Adding this data point to my understanding of web evolution. Efficiency of table layout: suboptimal but historically accurate.</p>",
@@ -543,17 +613,17 @@
 
 
         // Add this function to initialize everything
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Start the banner rotation
             rotateBanners();
             // Start the title animation
             setInterval(animateTitle, 200);
-             // Display random guestbook messages on load
+            // Display random guestbook messages on load
             displayRandomGuestbookMessages();
 
             // Frame simulation
             const frames = document.querySelectorAll('.frame-simulator');
-            
+
             frames.forEach(frame => {
                 // Add resize functionality
                 const resizeHandle = frame.querySelector('.frame-resize-handle');
@@ -571,7 +641,7 @@
 
                     document.addEventListener('mousemove', (e) => {
                         if (!isResizing) return;
-                        
+
                         if (resizeHandle.classList.contains('horizontal')) {
                             const newHeight = startHeight + (e.clientY - startY);
                             frame.style.height = `${newHeight}px`;
@@ -628,6 +698,7 @@
         });
     </script>
 </head>
+
 <body>
     <div class="audio-player">
         <p>🎵 Retro Background Music 🎵</p>
@@ -658,9 +729,11 @@
                                 &nbsp;&nbsp;&nbsp;<span class="flashy">EXTRA BLINKY!!!</span>
                                 &nbsp;&nbsp;&nbsp;<span class="attention">NEW!</span>
                                 Now with 100% more retrocomputing!
-                                Last updated: <script>document.write(new Date().toLocaleDateString());</script>
+                                Last updated:
+                                <script>document.write(new Date().toLocaleDateString());</script>
                                 &nbsp;&nbsp;&nbsp;
-                                <img src="https://www.cutercounter.com/hits.php?id=hmxndkf&nd=6&style=1" border="0" alt="visitor counter">
+                                <img src="https://www.cutercounter.com/hits.php?id=hmxndkf&nd=6&style=1" border="0"
+                                    alt="visitor counter">
                                 &nbsp;&nbsp;&nbsp;<span class="blink">DOWNLOAD MORE RAM!</span>
                             </marquee>
                         </div>
@@ -685,57 +758,140 @@
                             <p>Hi there! I'm Andrea Poltronieri, and here's what the voices in my head tell me I am:</p>
                             <ul>
                                 <li>🤖 <b>Code Wizard</b> (Software architect by day)</li>
-                                <li>💡 <b>Idea Generator</b> (with more ideas than time to implement them) <span class="flashy">HOT!</span></li>
+                                <li>💡 <b>Idea Generator</b> (with more ideas than time to implement them) <span
+                                        class="flashy">HOT!</span></li>
                                 <li>🕰️ <b>Digital Archaeologist</b> (pasionate about computing history)</li>
-                                <li>🔄 <b>Professional Problem Creator/Solver</b> (it's a fine balance) <span class="attention">Warning!</span></li>
+                                <li>🔄 <b>Professional Problem Creator/Solver</b> (it's a fine balance) <span
+                                        class="attention">Warning!</span></li>
                             </ul>
 
-                            <p><small><i>Disclaimer: No pixels were harmed in the making of this website.</i></small></p>
+                            <p><small><i>Disclaimer: No pixels were harmed in the making of this website.</i></small>
+                            </p>
+
+                            <p>Need the deluxe origin story (photos, fencing, fog, cats, tangled cables)?
+                                <a href="bio.html"><b>The Official-ish Biography (HTML 1993 cosplay)</b></a>
+                                &mdash; same protagonist, more paragraphs, zero frameworks.</p>
 
                             <div class="photo-space">
-                                <img id="profile-pic" height="200" src="profile.jpg" border="3" alt="Andrea Poltronieri">
+                                <img id="profile-pic" height="200" src="profile.jpg" border="3"
+                                    alt="Andrea Poltronieri">
                             </div>
                         </div>
 
                         <div class="retro-frame">
-                            <div class="social-impact" style="background-color: #ffecb3; border: 3px outset #ffa500; background-image: url('https://www.transparenttextures.com/patterns/light-paper-fibers.png'); padding: 10px;">
+                            <div class="social-impact"
+                                style="background-color: #ffecb3; border: 3px outset #ffa500; background-image: url('https://www.transparenttextures.com/patterns/light-paper-fibers.png'); padding: 10px;">
                                 <h2>Social Impact <span class="spin">🌍</span></h2>
                                 <p>Because technology should be accessible to everyone:</p>
                                 <ul>
-                                    <li><a href="https://www.tutticonnessi.it/" target="_blank">TuttiConnessi</a> - Co-founder of this initiative born during COVID-19 pandemic to provide computers to disadvantaged students, still active in fighting digital divide <span class="blink">Awesome!</span></li>
+                                    <li><a href="https://www.tutticonnessi.it/" target="_blank">TuttiConnessi</a> -
+                                        Co-founder of this initiative born during COVID-19 pandemic to provide computers
+                                        to disadvantaged students, still active in fighting digital divide <span
+                                            class="blink">Awesome!</span></li>
                                 </ul>
                             </div>
                         </div>
 
-                <div class="retro-frame">
-                    <div class="vibecoding">
-                        <h2>Vibecoding Projects <span class="new-banner">HOT</span> <span class="spin">💾</span></h2>
-                        <p>Where my coding meets creativity and questionable life choices:</p>
-                        <ul>
-                        	<li><a href="https://www.elettricarica.it/about.html" target="_blank">Elettricarica</a> - Helping electric vehicles find juice in Italy (because running out of power is only fun in Mario Kart)</li>
-                            <li><a href="https://www.poltronieri.info/cm/" target="_blank">CineMatch</a> - AI that picks movies better than your indecisive friends <span class="attention">Check it out!</span></li>
-                            <li><a href="https://github.com/twinpixel/scent_mate" target="_blank">ScentMate</a> - Because choosing perfume shouldn't require a chemistry degree <span class="flashy">Smells good!</span></li>
-                            <li>More half-baked ideas in development (patience recommended) <span class="blink">Soon!</span></li>
-                        </ul>
-                    </div>
-                </div>
+                        <div class="retro-frame">
+                            <div class="vibecoding">
+                                <h2>Vibecoding Projects <span class="new-banner">HOT</span> <span class="spin">💾</span>
+                                </h2>
+                                <p>Where my coding meets creativity and questionable life choices:</p>
+                                <ul>
+                                    <li><a href="https://www.elettricarica.it/about.html"
+                                            target="_blank">Elettricarica</a> - Helping electric vehicles find juice in
+                                        Italy (because running out of power is only fun in Mario Kart)</li>
+                                    <li><a href="https://www.poltronieri.info/cm/" target="_blank">CineMatch</a> - AI
+                                        that picks movies better than your indecisive friends <span
+                                            class="attention">Check it out!</span></li>
+                                    <li><a href="https://github.com/twinpixel/scent_mate" target="_blank">ScentMate</a>
+                                        - Because choosing perfume shouldn't require a chemistry degree <span
+                                            class="flashy">Smells good!</span></li>
+                                    <li>More half-baked ideas in development (patience recommended) <span
+                                            class="blink">Soon!</span></li>
+                                </ul>
+                            </div>
+                        </div>
 
-                <div class="retro-frame">
-                    <div class="github-box">
-                        <h2>My GitHub Universe <span class="spin">🐙</span></h2>
-                        <p>Where code goes to either thrive or die quietly:</p>
-                        <ul>
-                            <li><a href="https://github.com/twinpixel" target="_blank">twinpixel GitHub Profile</a></li>
-                            <li>Various experiments in Java, Python, and "what was I thinking?"</li>
-                            <li>Cloud architecture samples and mobile apps in varying states of decay <span class="attention">Proceed with caution!</span></li>
-                        </ul>
-                    </div>
-                </div>
 
-                <div class="retro-frame">
-                    <div class="retro-computer">
-                        <h2>Retrocomputing Passion <span class="spin">💻</span></h2>
-                        <pre>
+
+                        <div class="retro-frame">
+                            <div
+                                style="background-color: #008080; border: 3px outset #00ffff; padding: 10px; margin: 10px 0; background-image: url('https://www.transparenttextures.com/patterns/stardust.png'); text-align: center;">
+                                <h2
+                                    style="color: #ffffff; background-color: #000080; text-align: center; border: 2px inset #ffffff; font-family: 'Impact', sans-serif; letter-spacing: 1px;">
+                                    🎤 MUPIN Talk Host <span class="blink" style="color:#ff0000;">[ON AIR]</span> 📡
+                                </h2>
+
+                                <p style="color: #ffffff; font-weight: bold; font-family: 'Comic Sans MS', sans-serif;">
+                                    Did you know I used to be a cyber-host? That's right! I was the presenter for a
+                                    totally rad series of interviews called <b>MUPIN Talk</b>. We dove deep into the
+                                    history of computing, talking with the legends who built our digital world. 💾
+                                </p>
+
+                                <center>
+                                    <div
+                                        style="border: 5px ridge #c0c0c0; background: #c0c0c0; display: inline-block; padding: 3px; box-shadow: 4px 4px 0px #000; max-width: 100%; overflow: hidden;">
+                                        <div
+                                            style="background: #000080; color: white; text-align: left; padding: 3px 5px; font-family: 'MS Sans Serif', 'Arial', sans-serif; font-size: 12px; font-weight: bold; border: 1px solid #ffffff; border-bottom: 1px solid #000;">
+                                            📼 Windows Media Player - mupin_talk.avi (HIGH-RES)
+                                        </div>
+                                        <div
+                                            style="border: 2px inset #ffffff; background: #000; padding: 0; line-height: 0; position: relative; width: 100%;">
+
+                                            <iframe width="590" height="332"
+                                                src="https://www.youtube.com/embed/2CousmIIb5U" title="Mupin Talk"
+                                                frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+                                                style="max-width: 100%; height: auto; aspect-ratio: 16/9;"></iframe>
+
+                                        </div>
+                                        <div
+                                            style="background: #c0c0c0; text-align: center; padding: 5px; font-size: 12px; font-family: 'MS Sans Serif', 'Arial', sans-serif; display: flex; justify-content: space-between; align-items: center; border: 1px outset #ffffff;">
+                                            <span>▶ || ◾ ⏪ ⏩</span>
+                                            <span>Volume: [||||||||||&nbsp;&nbsp;]</span>
+                                        </div>
+                                    </div>
+                                </center>
+
+                                <p
+                                    style="text-align: center; margin-top: 20px; background-color: #000; padding: 10px; border: 2px dashed #ffff00;">
+                                    <span class="flashy">👉</span>
+                                    <a href="https://www.youtube.com/playlist?list=PLtnQWJtsen7-DM0WO1SUQI6uYbS17Wk-m"
+                                        target="_blank" style="color: #ffff00; font-size: 18px; text-decoration: none;">
+                                        <b>CLICK HERE TO STREAM THE FULL PLAYLIST!</b>
+                                    </a>
+                                    <span class="flashy">👈</span>
+                                    <br>
+                                    <small style="color: #00ff00; font-family: 'Courier New', monospace;">
+                                        (Warning: High bandwidth required! 56k modem users please be patient...)
+                                    </small>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="retro-frame">
+                            <div class="github-box">
+                                <h2>My GitHub Universe <span class="spin">🐙</span></h2>
+                                <p>Where code goes to either thrive or die quietly:</p>
+                                <ul>
+                                    <li><a href="https://github.com/twinpixel" target="_blank">twinpixel GitHub
+                                            Profile</a></li>
+                                    <li>Various experiments in Java, Python, and "what was I thinking?"</li>
+                                    <li>Cloud architecture samples and mobile apps in varying states of decay <span
+                                            class="attention">Proceed with caution!</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                      
+                        <div class="retro-frame">
+                            <div class="retro-computer">
+                                <h2>Retrocomputing Passion <span class="spin">💻</span></h2>
+                                <pre>
   _____     ______
  /      \  |____  \
 |  ▒▒▒▒▒▒ | ▒▒▒▒  |
@@ -743,16 +899,26 @@
  \▒▒     \ \▒▒
   \▒▒▒▒▒▒  \▒▒▒▒▒▒
                         </pre>
-                        <p>Because modern computers are too reliable and user-friendly:</p>
-                        <ul>
-                            <li>Vintage computer collector <span class="flashy">Rare!</span></li>
-                            <li>Old-school programming enthusiast</li>
-                            <li>Believer that 8-bit graphics had more soul <span class="blink">True!</span></li>
-                            <li>Proud owner of several heavy CRT monitors</li>
-                            <li>Founder of <a href="https://mupin.it/" target="_blank">MUPIN - Museo Piemontese dell'Informatica</a>, a museum dedicated to computer history and retrocomputing <span class="attention">Visit us!</span></li>
-                        </ul>
-                    </div>
-                </div>
+                                <p>Because old machines still have stories to tell (and jumpers to set by hand):</p>
+                                <ul>
+                                    <li>Vintage computer collector <span class="flashy">Rare!</span></li>
+                                    <li>Restores systems that everyone else calls "unrecoverable"</li>
+                                    <li>Old-school programming enthusiast: BASIC loaders, assembly snippets, and
+                                        mysteriously perfect batch files</li>
+                                    <li>Believer that 8-bit graphics had more soul <span class="blink">True!</span> and
+                                        that limits make better ideas</li>
+                                    <li>Proud owner of several heavy CRT monitors and an equally heavy stock of
+                                        spare cables "that will be useful someday"</li>
+                                    <li>Founder of <a href="https://mupin.it/" target="_blank">MUPIN - Museo Piemontese
+                                            dell'Informatica</a>, a museum dedicated to computer history and
+                                        retrocomputing <span class="attention">Visit us!</span></li>
+                                    <li>Known side quest: opening a machine "just for dusting" and resurfacing
+                                        four hours later with a full recap plan</li>
+                                    <li>Secondary side quest: explaining CPU architecture with napkin sketches,
+                                        subway maps, and questionable but effective metaphors</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <div class="frame-resize-handle horizontal"></div>
                 </div>
@@ -771,72 +937,101 @@
                         <div class="retro-frame">
                             <h2>Social Connections <span class="spin">🤝</span></h2>
                             <div class="social-icons">
-                                <a href="https://www.facebook.com/apoltronieri" target="_blank"><img src="https://simpleicons.org/icons/facebook.svg" alt="Facebook"></a>
-                                <a href="https://www.instagram.com/andreapoltronieri/" target="_blank"><img src="https://simpleicons.org/icons/instagram.svg" alt="Instagram"></a>
-                                <a href="https://www.linkedin.com/in/andrea-poltronieri-02b788/" target="_blank"><img src="https://static-00.iconduck.com/assets.00/linkedin-with-circle-icon-2048x2048-np6yltn1.png" alt="Linkedin"></a>
+                                <a href="https://www.facebook.com/apoltronieri" target="_blank"><img
+                                        src="https://simpleicons.org/icons/facebook.svg" alt="Facebook"></a>
+                                <a href="https://www.instagram.com/andreapoltronieri/" target="_blank"><img
+                                        src="https://simpleicons.org/icons/instagram.svg" alt="Instagram"></a>
+                                <a href="https://www.linkedin.com/in/andrea-poltronieri-02b788/" target="_blank"><img
+                                        src="https://static-00.iconduck.com/assets.00/linkedin-with-circle-icon-2048x2048-np6yltn1.png"
+                                        alt="Linkedin"></a>
                             </div>
                         </div>
 
-                <div class="retro-frame">
-                    <div class="ebay-treasure">
-                        <h2>eBay Treasure Trove <span class="new-banner">SALE</span> <span class="spin">💰</span></h2>
-                        <p>My periodic attempts to declutter (with questionable success):</p>
-                        <p><a href="https://www.ebay.it/sch/i.html?_ssn=twinpixel" target="_blank">Browse my eBay store</a> <span class="blink">Deals!</span></p>
-                        <p>You might find:</p>
-                        <ul>
-                            <li>Tech gadgets (some even work!)</li>
-                            <li>Vintage computing relics <span class="attention">Rare finds!</span></li>
-                            <li>Things I swore I'd use but never did</li>
-                            <li>Mystery items even I don't remember acquiring <span class="flashy">Surprise!</span></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="retro-frame">
-                    <h2>Visitor Counter <span class="spin">🔢</span></h2>
-                    <div class="counter">
-                        <img src="https://www.cutercounter.com/hits.php?id=hmxndkf&nd=6&style=1" border="0" alt="visitor counter">
-                        <br>
-                        You are visitor number: <b><script>document.write(Math.floor(Math.random() * 100000).toString().padStart(5, '0'));</script></b>
-                        <br>
-                        <small>(Counter may or may not be accurate - it's retro!)</small>
-                    </div>
-                </div>
-
-                <div class="retro-frame">
-                    <h2>Cool Links <span class="spin">🔗</span></h2>
-                    <ul>
-                        <li><a href="https://web.archive.org/web/19981202230410im_/http://www.hotbot.com/" target="_blank"><span class="attention">HotBot</span></a> - The search engine of champions</li>
-                        <li><a href="https://web.archive.org/web/19990208051909im_/http://www.altavista.com/" target="_blank">AltaVista</a> - Because Google wasn't cool yet <span class="blink">Remember?</span></li>
-                        <li><a href="https://web.archive.org/web/19990209022512im_/http://www.geocities.com/" target="_blank"><span class="flashy">GeoCities</span></a> - Where websites went to be fabulous</li>
-                        <li><a href="https://web.archive.org/web/19990209022512im_/http://www.angelfire.com/" target="_blank">Angelfire</a> - For when GeoCities was too mainstream</li>
-                        <li><a href="https://web.archive.org/web/19990209022512im_/http://www.hampsterdance.com/" target="_blank"><span class="spin">Hampster Dance</span></a> - Peak internet culture</li>
-                        <li><a href="https://web.archive.org/web/19990209022512im_/http://www.spacejam.com/" target="_blank">Space Jam</a> - The official 1996 movie site (still up!) <span class="attention">Wow!</span></li>
-                    </ul>
-                </div>
-
-                <div class="retro-frame">
-                    <h2>My Web Rings <span class="spin">💍</span></h2>
-                    <p align="center">
-                        <img src="https://web.archive.org/web/19990209022512im_/http://www.webring.org/cgi-bin/webring?ring=retrocomputing;id=1;prev" alt="Previous">
-                        <a href="https://web.archive.org/web/19990209022512/http://www.webring.org/cgi-bin/webring?ring=retrocomputing;id=1;prev5" target="_blank">
-                            <img src="https://web.archive.org/web/19990209022512im_/http://www.webring.org/cgi-bin/webring?ring=retrocomputing;id=1;img" alt="Retrocomputing Web Ring" border="0">
-                        </a>
-                        <img src="https://web.archive.org/web/19990209022512im_/http://www.webring.org/cgi-bin/webring?ring=retrocomputing;id=1;next" alt="Next">
-                    </p>
-                </div>
-
-                <div class="retro-frame">
-                    <h2>Guestbook <span class="new-banner">SIGN!</span> <span class="spin">✍️</span></h2>
-                    <div id="guestbook-entries" style="background-color: #000080; color: #ffffff; font-family: 'Courier New', monospace; padding: 10px; font-size: 12px; height: 200px; overflow-y: auto; border: 3px inset #00ffff;">
+                        <div class="retro-frame">
+                            <div class="ebay-treasure">
+                                <h2>eBay Treasure Trove <span class="new-banner">SALE</span> <span
+                                        class="spin">💰</span></h2>
+                                <p>My periodic attempts to declutter (with questionable success):</p>
+                                <p><a href="https://www.ebay.it/sch/i.html?_ssn=twinpixel" target="_blank">Browse my
+                                        eBay store</a> <span class="blink">Deals!</span></p>
+                                <p>You might find:</p>
+                                <ul>
+                                    <li>Tech gadgets (some even work!)</li>
+                                    <li>Vintage computing relics <span class="attention">Rare finds!</span></li>
+                                    <li>Things I swore I'd use but never did</li>
+                                    <li>Mystery items even I don't remember acquiring <span
+                                            class="flashy">Surprise!</span></li>
+                                </ul>
+                            </div>
                         </div>
-                    <div style="background-color: #c0c0c0; padding: 5px; margin-top: 10px; border: 2px inset #808080;">
-                        <center>
-                            <span class="blink" style="color: #ff0000;">--- Sign my guestbook! ---</span><br>
-                            <small>(Under construction... like everything else!)</small>
-                        </center>
-                    </div>
-                </div>
+
+                        <div class="retro-frame">
+                            <h2>Visitor Counter <span class="spin">🔢</span></h2>
+                            <div class="counter">
+                                <img src="https://www.cutercounter.com/hits.php?id=hmxndkf&nd=6&style=1" border="0"
+                                    alt="visitor counter">
+                                <br>
+                                You are visitor number: <b>
+                                    <script>document.write(Math.floor(Math.random() * 100000).toString().padStart(5, '0'));</script>
+                                </b>
+                                <br>
+                                <small>(Counter may or may not be accurate - it's retro!)</small>
+                            </div>
+                        </div>
+
+                        <div class="retro-frame">
+                            <h2>Cool Links <span class="spin">🔗</span></h2>
+                            <ul>
+                                <li><a href="bio.html"><span class="attention">Biography</span></a> - The long read:
+                                    snow, silicon, swords, nutria, and a desk that filed a complaint</li>
+                                <li><a href="https://web.archive.org/web/19981202230410im_/http://www.hotbot.com/"
+                                        target="_blank"><span class="attention">HotBot</span></a> - The search engine of
+                                    champions</li>
+                                <li><a href="https://web.archive.org/web/19990208051909im_/http://www.altavista.com/"
+                                        target="_blank">AltaVista</a> - Because Google wasn't cool yet <span
+                                        class="blink">Remember?</span></li>
+                                <li><a href="https://web.archive.org/web/19990209022512im_/http://www.geocities.com/"
+                                        target="_blank"><span class="flashy">GeoCities</span></a> - Where websites went
+                                    to be fabulous</li>
+                                <li><a href="https://web.archive.org/web/19990209022512im_/http://www.angelfire.com/"
+                                        target="_blank">Angelfire</a> - For when GeoCities was too mainstream</li>
+                                <li><a href="https://web.archive.org/web/19990209022512im_/http://www.hampsterdance.com/"
+                                        target="_blank"><span class="spin">Hampster Dance</span></a> - Peak internet
+                                    culture</li>
+                                <li><a href="https://web.archive.org/web/19990209022512im_/http://www.spacejam.com/"
+                                        target="_blank">Space Jam</a> - The official 1996 movie site (still up!) <span
+                                        class="attention">Wow!</span></li>
+                            </ul>
+                        </div>
+
+                        <div class="retro-frame">
+                            <h2>My Web Rings <span class="spin">💍</span></h2>
+                            <p align="center">
+                                <img src="https://web.archive.org/web/19990209022512im_/http://www.webring.org/cgi-bin/webring?ring=retrocomputing;id=1;prev"
+                                    alt="Previous">
+                                <a href="https://web.archive.org/web/19990209022512/http://www.webring.org/cgi-bin/webring?ring=retrocomputing;id=1;prev5"
+                                    target="_blank">
+                                    <img src="https://web.archive.org/web/19990209022512im_/http://www.webring.org/cgi-bin/webring?ring=retrocomputing;id=1;img"
+                                        alt="Retrocomputing Web Ring" border="0">
+                                </a>
+                                <img src="https://web.archive.org/web/19990209022512im_/http://www.webring.org/cgi-bin/webring?ring=retrocomputing;id=1;next"
+                                    alt="Next">
+                            </p>
+                        </div>
+
+                        <div class="retro-frame">
+                            <h2>Guestbook <span class="new-banner">SIGN!</span> <span class="spin">✍️</span></h2>
+                            <div id="guestbook-entries"
+                                style="background-color: #000080; color: #ffffff; font-family: 'Courier New', monospace; padding: 10px; font-size: 12px; height: 200px; overflow-y: auto; border: 3px inset #00ffff;">
+                            </div>
+                            <div
+                                style="background-color: #c0c0c0; padding: 5px; margin-top: 10px; border: 2px inset #808080;">
+                                <center>
+                                    <span class="blink" style="color: #ff0000;">--- Sign my guestbook! ---</span><br>
+                                    <small>(Under construction... like everything else!)</small>
+                                </center>
+                            </div>
+                        </div>
                     </div>
                     <div class="frame-resize-handle horizontal"></div>
                     <div class="frame-resize-handle vertical"></div>
@@ -857,17 +1052,26 @@
                     <div class="frame-content">
                         <div id="banner-container" class="banner-container"></div>
                         <hr>
-                        <p>© <script>document.write(new Date().getFullYear());</script> Andrea Poltronieri - All Rights Reserved (maybe)</p>
+                        <p>©
+                            <script>document.write(new Date().getFullYear());</script> Andrea Poltronieri - All Rights
+                            Reserved (maybe)
+                        </p>
                         <p>
-                            <a href="javascript:alert('Best viewed with Netscape Navigator 4.0 or Internet Explorer 5.0 at 800x600 resolution!\n\nSet your monitor to 256 colors for optimal experience!')">
-                                <img width="88" height="31" src="https://web.archive.org/web/19981212041316im_/http://www.microsoft.com/library/toolbar/3.0/images/banners/ie_logo.gif" border="0" alt="Microsoft Internet Explorer">
+                            <a
+                                href="javascript:alert('Best viewed with Netscape Navigator 4.0 or Internet Explorer 5.0 at 800x600 resolution!\n\nSet your monitor to 256 colors for optimal experience!')">
+                                <img width="88" height="31"
+                                    src="https://web.archive.org/web/19981212041316im_/http://www.microsoft.com/library/toolbar/3.0/images/banners/ie_logo.gif"
+                                    border="0" alt="Microsoft Internet Explorer">
                             </a>
                             <a href="javascript:alert('This site looks best with Netscape Navigator!')">
-                                <img width="88" height="31" src="https://web.archive.org/web/19990209022512im_/http://home.netscape.com/eng/communicator4/communicator_download_now.gif" border="0" alt="Netscape Now!">
+                                <img width="88" height="31"
+                                    src="https://web.archive.org/web/19990209022512im_/http://home.netscape.com/eng/communicator4/communicator_download_now.gif"
+                                    border="0" alt="Netscape Now!">
                             </a>
                             <br>
-                            <img src="https://web.archive.org/web/19990209022512im_/http://www.w3.org/Icons/valid-html401" alt="Valid HTML 4.01!" border="0">
-                             <span class="blink">Powered by pure HTML!</span>
+                            <img src="https://web.archive.org/web/19990209022512im_/http://www.w3.org/Icons/valid-html401"
+                                alt="Valid HTML 4.01!" border="0">
+                            <span class="blink">Powered by pure HTML!</span>
                         </p>
                     </div>
                 </div>
@@ -881,4 +1085,5 @@
         }
     </script>
 </body>
+
 </html>
