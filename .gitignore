@@ -1,0 +1,41 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# Editor / IDE
+.vscode/
+!.vscode/extensions.json
+.idea/
+.cursor
+.claude
+*.swp
+*.swo
+*~
+
+# Logs and temp files
+*.log
+*.tmp
+*.temp
+.cache/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Optional local tooling (if added later)
+node_modules/
+dist/
+build/
